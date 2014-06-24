@@ -1,0 +1,12 @@
+integration/glue/simple/SimpleObjectGlue$2.class
+integration/glue/simple/SimpleObjectGlue.class
+integration/specs/simple/RunSpecs.class
+integration/tests/smoke/SimpleObjectsTest_listAll_and_create.class
+integration/SimpleAppSystemInitializer.class
+integration/glue/InMemoryDBForSimpleApp.class
+integration/glue/simple/SimpleObjectGlue$1.class
+integration/tests/SimpleAppIntegTest.class
+integration/SimpleAppSystemInitializer$SimpleAppSystemBuilder.class
+integration/glue/BootstrappingGlue.class
+integration/glue/simple/SimpleObjectGlue$3.class
+integration/glue/CatalogOfFixturesGlue.class
