@@ -1,141 +1,133 @@
 $(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("integration/specs/simple/SimpleObjectSpec_listAllAndCreate.feature");
 formatter.feature({
-  "id": "list-and-create-new-simple-objectts",
-  "tags": [
+  "comments": [
     {
-      "name": "@SimpleObjectsFixture",
-      "line": 17
+      "line": 1,
+      "value": "#"
+    },
+    {
+      "line": 2,
+      "value": "#  Licensed to the Apache Software Foundation (ASF) under one or more"
+    },
+    {
+      "line": 3,
+      "value": "#  contributor license agreements.  See the NOTICE file distributed with"
+    },
+    {
+      "line": 4,
+      "value": "#  this work for additional information regarding copyright ownership."
+    },
+    {
+      "line": 5,
+      "value": "#  The ASF licenses this file to You under the Apache License, Version 2.0"
+    },
+    {
+      "line": 6,
+      "value": "#  (the \"License\"); you may not use this file except in compliance with"
+    },
+    {
+      "line": 7,
+      "value": "#  the License.  You may obtain a copy of the License at"
+    },
+    {
+      "line": 8,
+      "value": "#"
+    },
+    {
+      "line": 9,
+      "value": "#     http://www.apache.org/licenses/LICENSE-2.0"
+    },
+    {
+      "line": 10,
+      "value": "#"
+    },
+    {
+      "line": 11,
+      "value": "#  Unless required by applicable law or agreed to in writing, software"
+    },
+    {
+      "line": 12,
+      "value": "#  distributed under the License is distributed on an \"AS IS\" BASIS,"
+    },
+    {
+      "line": 13,
+      "value": "#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied."
+    },
+    {
+      "line": 14,
+      "value": "#  See the License for the specific language governing permissions and"
+    },
+    {
+      "line": 15,
+      "value": "#  limitations under the License."
+    },
+    {
+      "line": 16,
+      "value": "#"
     }
   ],
-  "description": "",
-  "name": "List and Create New Simple Objectts",
-  "keyword": "Feature",
   "line": 18,
-  "comments": [
+  "name": "List and Create New Simple Objectts",
+  "description": "",
+  "id": "list-and-create-new-simple-objectts",
+  "keyword": "Feature",
+  "tags": [
     {
-      "value": "#",
-      "line": 1
-    },
-    {
-      "value": "#  Licensed to the Apache Software Foundation (ASF) under one or more",
-      "line": 2
-    },
-    {
-      "value": "#  contributor license agreements.  See the NOTICE file distributed with",
-      "line": 3
-    },
-    {
-      "value": "#  this work for additional information regarding copyright ownership.",
-      "line": 4
-    },
-    {
-      "value": "#  The ASF licenses this file to You under the Apache License, Version 2.0",
-      "line": 5
-    },
-    {
-      "value": "#  (the \"License\"); you may not use this file except in compliance with",
-      "line": 6
-    },
-    {
-      "value": "#  the License.  You may obtain a copy of the License at",
-      "line": 7
-    },
-    {
-      "value": "#",
-      "line": 8
-    },
-    {
-      "value": "#     http://www.apache.org/licenses/LICENSE-2.0",
-      "line": 9
-    },
-    {
-      "value": "#",
-      "line": 10
-    },
-    {
-      "value": "#  Unless required by applicable law or agreed to in writing, software",
-      "line": 11
-    },
-    {
-      "value": "#  distributed under the License is distributed on an \"AS IS\" BASIS,",
-      "line": 12
-    },
-    {
-      "value": "#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.",
-      "line": 13
-    },
-    {
-      "value": "#  See the License for the specific language governing permissions and",
-      "line": 14
-    },
-    {
-      "value": "#  limitations under the License.",
-      "line": 15
-    },
-    {
-      "value": "#",
-      "line": 16
+      "line": 17,
+      "name": "@SimpleObjectsFixture"
     }
   ]
 });
 formatter.before({
-<<<<<<< HEAD
-  "duration": 380029743,
+  "duration": 156763147,
   "status": "passed"
 });
 formatter.before({
-  "duration": 209800001,
-=======
-  "duration": 168854483,
-  "status": "passed"
-});
-formatter.before({
-  "duration": 109623054,
->>>>>>> d7b2eccfdb19138d643eed8e100704b92b2fc3c7
+  "duration": 63515007,
   "status": "passed"
 });
 formatter.scenario({
-  "id": "list-and-create-new-simple-objectts;existing-simple-objects-can-be-listed-and-new-ones-created",
-  "tags": [
+  "comments": [
     {
-      "name": "@unit",
-      "line": 24
+      "line": 20,
+      "value": "# the scenario is listed twice here just to demonstrate that it"
+    },
+    {
+      "line": 21,
+      "value": "# can be run either at @unit-level scope (using mocks) or"
+    },
+    {
+      "line": 22,
+      "value": "# at @integration-level scope (against the running system)."
     }
   ],
-  "description": "",
-  "name": "Existing simple objects can be listed and new ones created",
-  "keyword": "Scenario",
   "line": 25,
+  "name": "Existing simple objects can be listed and new ones created",
+  "description": "",
+  "id": "list-and-create-new-simple-objectts;existing-simple-objects-can-be-listed-and-new-ones-created",
   "type": "scenario",
-  "comments": [
+  "keyword": "Scenario",
+  "tags": [
     {
-      "value": "# the scenario is listed twice here just to demonstrate that it",
-      "line": 20
-    },
-    {
-      "value": "# can be run either at @unit-level scope (using mocks) or",
-      "line": 21
-    },
-    {
-      "value": "# at @integration-level scope (against the running system).",
-      "line": 22
+      "line": 24,
+      "name": "@unit"
     }
   ]
 });
 formatter.step({
+  "line": 26,
   "name": "there are initially 3 simple objects",
-  "keyword": "Given ",
-  "line": 26
+  "keyword": "Given "
 });
 formatter.step({
+  "line": 27,
   "name": "I create a new simple object",
-  "keyword": "When ",
-  "line": 27
+  "keyword": "When "
 });
 formatter.step({
+  "line": 28,
   "name": "there are 4 simple objects",
-  "keyword": "Then ",
-  "line": 28
+  "keyword": "Then "
 });
 formatter.match({
   "arguments": [
@@ -147,22 +139,14 @@ formatter.match({
   "location": "SimpleObjectGlue.there_are_N_simple_objects(int)"
 });
 formatter.result({
-<<<<<<< HEAD
-  "duration": 1481199089,
-=======
-  "duration": 842988595,
->>>>>>> d7b2eccfdb19138d643eed8e100704b92b2fc3c7
+  "duration": 830533085,
   "status": "passed"
 });
 formatter.match({
   "location": "SimpleObjectGlue.I_create_a_new_simple_object()"
 });
 formatter.result({
-<<<<<<< HEAD
-  "duration": 89033756,
-=======
-  "duration": 132475787,
->>>>>>> d7b2eccfdb19138d643eed8e100704b92b2fc3c7
+  "duration": 36267405,
   "status": "passed"
 });
 formatter.match({
@@ -175,65 +159,49 @@ formatter.match({
   "location": "SimpleObjectGlue.there_are_N_simple_objects(int)"
 });
 formatter.result({
-<<<<<<< HEAD
-  "duration": 7379409,
+  "duration": 962754,
   "status": "passed"
 });
 formatter.after({
-  "duration": 466040,
+  "duration": 486667,
   "status": "passed"
 });
 formatter.before({
-  "duration": 15086054811,
+  "duration": 10216601113,
   "status": "passed"
 });
 formatter.before({
-  "duration": 370262573,
-=======
-  "duration": 698690,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 241237,
-  "status": "passed"
-});
-formatter.before({
-  "duration": 8248654589,
-  "status": "passed"
-});
-formatter.before({
-  "duration": 357872801,
->>>>>>> d7b2eccfdb19138d643eed8e100704b92b2fc3c7
+  "duration": 311911644,
   "status": "passed"
 });
 formatter.scenario({
+  "line": 32,
+  "name": "Existing simple objects can be listed and new ones created",
+  "description": "",
   "id": "list-and-create-new-simple-objectts;existing-simple-objects-can-be-listed-and-new-ones-created",
+  "type": "scenario",
+  "keyword": "Scenario",
   "tags": [
     {
-      "name": "@integration",
-      "line": 31
+      "line": 31,
+      "name": "@integration"
     }
-  ],
-  "description": "",
-  "name": "Existing simple objects can be listed and new ones created",
-  "keyword": "Scenario",
-  "line": 32,
-  "type": "scenario"
+  ]
 });
 formatter.step({
+  "line": 33,
   "name": "there are initially 3 simple objects",
-  "keyword": "Given ",
-  "line": 33
+  "keyword": "Given "
 });
 formatter.step({
+  "line": 34,
   "name": "I create a new simple object",
-  "keyword": "When ",
-  "line": 34
+  "keyword": "When "
 });
 formatter.step({
+  "line": 35,
   "name": "there are 4 simple objects",
-  "keyword": "Then ",
-  "line": 35
+  "keyword": "Then "
 });
 formatter.match({
   "arguments": [
@@ -245,22 +213,14 @@ formatter.match({
   "location": "SimpleObjectGlue.there_are_N_simple_objects(int)"
 });
 formatter.result({
-<<<<<<< HEAD
-  "duration": 297261235,
-=======
-  "duration": 316591729,
->>>>>>> d7b2eccfdb19138d643eed8e100704b92b2fc3c7
+  "duration": 306806303,
   "status": "passed"
 });
 formatter.match({
   "location": "SimpleObjectGlue.I_create_a_new_simple_object()"
 });
 formatter.result({
-<<<<<<< HEAD
-  "duration": 11792065,
-=======
-  "duration": 1917708,
->>>>>>> d7b2eccfdb19138d643eed8e100704b92b2fc3c7
+  "duration": 4041303,
   "status": "passed"
 });
 formatter.match({
@@ -273,19 +233,11 @@ formatter.match({
   "location": "SimpleObjectGlue.there_are_N_simple_objects(int)"
 });
 formatter.result({
-<<<<<<< HEAD
-  "duration": 29375303,
+  "duration": 11829285,
   "status": "passed"
 });
 formatter.after({
-  "duration": 33378078,
-=======
-  "duration": 11012862,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 10917908,
->>>>>>> d7b2eccfdb19138d643eed8e100704b92b2fc3c7
+  "duration": 12314982,
   "status": "passed"
 });
 });

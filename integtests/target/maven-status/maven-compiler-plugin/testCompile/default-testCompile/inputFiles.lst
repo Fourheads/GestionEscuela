@@ -1,8 +1,8 @@
-C:\GestionEscuela\integtests\src\test\java\integration\SimpleAppSystemInitializer.java
-C:\GestionEscuela\integtests\src\test\java\integration\tests\smoke\SimpleObjectsTest_listAll_and_create.java
-C:\GestionEscuela\integtests\src\test\java\integration\glue\InMemoryDBForSimpleApp.java
-C:\GestionEscuela\integtests\src\test\java\integration\tests\SimpleAppIntegTest.java
-C:\GestionEscuela\integtests\src\test\java\integration\glue\BootstrappingGlue.java
-C:\GestionEscuela\integtests\src\test\java\integration\specs\simple\RunSpecs.java
-C:\GestionEscuela\integtests\src\test\java\integration\glue\CatalogOfFixturesGlue.java
-C:\GestionEscuela\integtests\src\test\java\integration\glue\simple\SimpleObjectGlue.java
+/home/leandro/GestionEscuela/integtests/src/test/java/integration/specs/simple/RunSpecs.java
+/home/leandro/GestionEscuela/integtests/src/test/java/integration/tests/smoke/SimpleObjectsTest_listAll_and_create.java
+/home/leandro/GestionEscuela/integtests/src/test/java/integration/glue/InMemoryDBForSimpleApp.java
+/home/leandro/GestionEscuela/integtests/src/test/java/integration/glue/simple/SimpleObjectGlue.java
+/home/leandro/GestionEscuela/integtests/src/test/java/integration/glue/CatalogOfFixturesGlue.java
+/home/leandro/GestionEscuela/integtests/src/test/java/integration/SimpleAppSystemInitializer.java
+/home/leandro/GestionEscuela/integtests/src/test/java/integration/glue/BootstrappingGlue.java
+/home/leandro/GestionEscuela/integtests/src/test/java/integration/tests/SimpleAppIntegTest.java
