@@ -40,6 +40,40 @@ public class Direccion {
 	}
 	// }}
 
+	// {{ Piso (property)
+	private int piso;
+
+	@Column(allowsNull = "true")
+	@Persistent
+	@MemberOrder(sequence = "1.1.1")
+	public int getPiso() {
+		return piso;
+	}
+
+	public void setPiso(final int piso) {
+		this.piso = piso;
+	}
+	// }}
+
+
+	// {{ Departamento (property)
+	private String departamento;
+
+	@Column(allowsNull = "true")
+	@Persistent
+	@MemberOrder(sequence = "1.1.2")
+	public String getDepartamento() {
+		return departamento;
+	}
+
+	public void setDepartamento(final String departamento) {
+		this.departamento = departamento;
+	}
+	// }}
+
+
+	
+	
 	// {{ Localidad (property)
 	private Localidad localidad;
 

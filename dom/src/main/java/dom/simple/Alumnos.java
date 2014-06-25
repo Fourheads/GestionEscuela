@@ -9,6 +9,7 @@ import org.apache.isis.applib.annotation.MemberOrder;
 import org.apache.isis.applib.annotation.Named;
 import org.apache.isis.applib.annotation.ActionSemantics.Of;
 
+import dom.simple.Localidad.E_localidades;
 import dom.simple.Persona.E_nacionalidad;
 import dom.simple.Persona.E_sexo;
 
@@ -52,8 +53,11 @@ public class Alumnos {
             final @Named("Sexo") E_sexo sexo,
             final @Named("DNI") int dni,
             final @Named("Nacionalidad") E_nacionalidad nacionalidad,
+            final @Named("Domicilio. Localidad") E_localidades localidad,
             final @Named("Domicilio. Calle") String calle,
             final @Named("Domicilio. Numero") int numero,
+            final @Named("Domicilio. Piso") int piso,
+            final @Named("Domicilio. Departamento") String departamento,
             final @Named("Teléfono") String telefono) {
         final Alumno obj = container.newTransientInstance(Alumno.class);
         //final Direccion dire = new Direccion();

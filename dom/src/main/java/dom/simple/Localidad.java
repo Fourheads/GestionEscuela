@@ -10,22 +10,22 @@ import org.apache.isis.applib.annotation.MemberOrder;
 public class Localidad {
 
 	// {{ Nombre (property)
-	private localidades nombre;
+	private E_localidades nombre;
 
 	@Column(allowsNull = "true")
 	@MemberOrder(sequence = "1")
 	@Persistent
-	public localidades getNombre() {
+	public E_localidades getNombre() {
 		return nombre;
 	}
 
-	public void setNombre(final localidades nombre) {
+	public void setNombre(final E_localidades nombre) {
 		this.nombre = nombre;
 	}
 	// }}
 
 
-	public enum localidades{	
+	public enum E_localidades{	
 		Neuquen, Cipolletti, Plottier, Centenario, Roca, Allen;
 	}
 	

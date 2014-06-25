@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: dom.simple.SimpleObjectsTest_create
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.517 sec - in dom.simple.SimpleObjectsTest_create
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.381 sec - in dom.simple.SimpleObjectsTest_create

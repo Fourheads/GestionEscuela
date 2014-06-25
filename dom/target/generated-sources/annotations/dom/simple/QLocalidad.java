@@ -27,17 +27,17 @@ public class QLocalidad extends org.datanucleus.api.jdo.query.PersistableExpress
         return new QLocalidad(Localidad.class, name, ExpressionType.VARIABLE);
     }
 
-    public final ObjectExpression<dom.simple.Localidad.localidades> nombre;
+    public final ObjectExpression<dom.simple.Localidad.E_localidades> nombre;
 
     public QLocalidad(PersistableExpression parent, String name, int depth)
     {
         super(parent, name);
-        this.nombre = new ObjectExpressionImpl<dom.simple.Localidad.localidades>(this, "nombre");
+        this.nombre = new ObjectExpressionImpl<dom.simple.Localidad.E_localidades>(this, "nombre");
     }
 
     public QLocalidad(Class type, String name, org.datanucleus.api.jdo.query.ExpressionType exprType)
     {
         super(type, name, exprType);
-        this.nombre = new ObjectExpressionImpl<dom.simple.Localidad.localidades>(this, "nombre");
+        this.nombre = new ObjectExpressionImpl<dom.simple.Localidad.E_localidades>(this, "nombre");
     }
 }
