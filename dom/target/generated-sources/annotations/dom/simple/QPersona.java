@@ -30,7 +30,7 @@ public class QPersona extends org.datanucleus.api.jdo.query.PersistableExpressio
     public final NumericExpression<Integer> dni;
     public final StringExpression apellido;
     public final StringExpression nombre;
-    public final StringExpression direccion;
+    public final dom.simple.QDireccion direccion;
     public final StringExpression fechaNacimiento;
     public final ObjectExpression<dom.simple.Persona.E_nacionalidad> nacionalidad;
     public final ObjectExpression<dom.simple.Persona.E_sexo> sexo;
@@ -42,7 +42,14 @@ public class QPersona extends org.datanucleus.api.jdo.query.PersistableExpressio
         this.dni = new NumericExpressionImpl<Integer>(this, "dni");
         this.apellido = new StringExpressionImpl(this, "apellido");
         this.nombre = new StringExpressionImpl(this, "nombre");
-        this.direccion = new StringExpressionImpl(this, "direccion");
+        if (depth > 0)
+        {
+            this.direccion = new dom.simple.QDireccion(this, "direccion", depth-1);
+        }
+        else
+        {
+            this.direccion = null;
+        }
         this.fechaNacimiento = new StringExpressionImpl(this, "fechaNacimiento");
         this.nacionalidad = new ObjectExpressionImpl<dom.simple.Persona.E_nacionalidad>(this, "nacionalidad");
         this.sexo = new ObjectExpressionImpl<dom.simple.Persona.E_sexo>(this, "sexo");
@@ -55,7 +62,7 @@ public class QPersona extends org.datanucleus.api.jdo.query.PersistableExpressio
         this.dni = new NumericExpressionImpl<Integer>(this, "dni");
         this.apellido = new StringExpressionImpl(this, "apellido");
         this.nombre = new StringExpressionImpl(this, "nombre");
-        this.direccion = new StringExpressionImpl(this, "direccion");
+        this.direccion = new dom.simple.QDireccion(this, "direccion", 5);
         this.fechaNacimiento = new StringExpressionImpl(this, "fechaNacimiento");
         this.nacionalidad = new ObjectExpressionImpl<dom.simple.Persona.E_nacionalidad>(this, "nacionalidad");
         this.sexo = new ObjectExpressionImpl<dom.simple.Persona.E_sexo>(this, "sexo");

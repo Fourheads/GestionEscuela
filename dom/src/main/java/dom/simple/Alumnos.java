@@ -60,18 +60,24 @@ public class Alumnos {
             final @Named("Domicilio. Departamento") String departamento,
             final @Named("Teléfono") String telefono) {
         final Alumno obj = container.newTransientInstance(Alumno.class);
-        //final Direccion dire = new Direccion();
+        final Direccion dire = new Direccion();
+        final Localidad loca = new Localidad();
         
-       
         String propietario = nombre.substring(0, 1) + ". " + apellido; 
-        //dire.setCalle(calle);
-        //dire.setNumero(numero);
+        
+        loca.setNombre(localidad);
+        
+        dire.setCalle(calle);
+        dire.setNumero(numero);
+        dire.setPiso(piso);
+        dire.setDepartamento(departamento);
+        dire.setLocalidad(loca);
         //legajo.setPropietario(propietario);
         obj.setSexo(sexo);
         obj.setNombre(nombre);
         obj.setApellido(apellido);
         obj.setDni(dni);
-        //obj.setDireccion(dire);
+        obj.setDireccion(dire);
         
         
         container.persistIfNotAlready(obj);

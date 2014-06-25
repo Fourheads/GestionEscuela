@@ -12,7 +12,7 @@ public class Direccion {
 	// {{ Calle (property)
 	private String calle;
 
-	@Column(allowsNull = "true")
+	@Column(allowsNull = "true", name = "LOCALIDAD_ID")
 	@Persistent
 	@MemberOrder(sequence = "1")
 	public String getCalle() {

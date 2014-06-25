@@ -60,16 +60,16 @@ public class Persona {
 
 
 	// {{ Direccion (property)
-	private String direccion;
+	private Direccion direccion;
 
 	@Persistent
 	@MemberOrder(sequence = "1")
-	@javax.jdo.annotations.Column(allowsNull="false")
-	public String getDireccion() {
+	@javax.jdo.annotations.Column(allowsNull="false", name = "DIRECCION_ID")
+	public Direccion getDireccion() {
 		return direccion;
 	}
 
-	public void setDireccion(final String direccion) {
+	public void setDireccion(final Direccion direccion) {
 		this.direccion = direccion;
 	}
 	// }}
