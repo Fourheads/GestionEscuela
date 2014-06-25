@@ -57,7 +57,7 @@ public class Alumnos {
             final @Named("Teléfono") String telefono) {
         final Alumno obj = container.newTransientInstance(Alumno.class);
         //final Direccion dire = new Direccion();
-        //final Legajo legajo = new Legajo();
+        
        
         String propietario = nombre.substring(0, 1) + ". " + apellido; 
         //dire.setCalle(calle);
@@ -68,7 +68,7 @@ public class Alumnos {
         obj.setApellido(apellido);
         obj.setDni(dni);
         //obj.setDireccion(dire);
-        //obj.setLegajo(legajo);
+        
         container.persistIfNotAlready(obj);
         return obj;
     }
