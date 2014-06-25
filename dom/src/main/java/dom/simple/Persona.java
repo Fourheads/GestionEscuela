@@ -4,6 +4,7 @@ import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 
 import org.apache.isis.applib.annotation.MemberOrder;
+import org.joda.time.LocalDate;
 
 
 ///GestionEscuela
@@ -76,16 +77,16 @@ public class Persona {
 
 
 	// {{ FechaNacimiento (property)
-	private String fechaNacimiento;
+	private LocalDate fechaNacimiento;
 
 	@Persistent
 	@MemberOrder(sequence = "1")
 	@javax.jdo.annotations.Column(allowsNull="false")
-	public String getFechaNacimiento() {
+	public LocalDate getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
-	public void setFechaNacimiento(final String fechaNacimiento) {
+	public void setFechaNacimiento(final LocalDate fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 	// }}

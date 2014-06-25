@@ -8,6 +8,7 @@ import org.apache.isis.applib.annotation.Bookmarkable;
 import org.apache.isis.applib.annotation.MemberOrder;
 import org.apache.isis.applib.annotation.Named;
 import org.apache.isis.applib.annotation.ActionSemantics.Of;
+import org.joda.time.LocalDate;
 
 import dom.simple.Localidad.E_localidades;
 import dom.simple.Persona.E_nacionalidad;
@@ -52,6 +53,7 @@ public class Alumnos {
             final @Named("Apellido") String apellido,
             final @Named("Sexo") E_sexo sexo,
             final @Named("DNI") int dni,
+            final @Named("Fecha Nacimiento") LocalDate nacimiento,
             final @Named("Nacionalidad") E_nacionalidad nacionalidad,
             final @Named("Domicilio. Localidad") E_localidades localidad,
             final @Named("Domicilio. Calle") String calle,
@@ -72,12 +74,14 @@ public class Alumnos {
         dire.setPiso(piso);
         dire.setDepartamento(departamento);
         dire.setLocalidad(loca);
-        //legajo.setPropietario(propietario);
+        
         obj.setSexo(sexo);
         obj.setNombre(nombre);
         obj.setApellido(apellido);
         obj.setDni(dni);
+        obj.setFechaNacimiento(nacimiento);
         obj.setDireccion(dire);
+        obj.setTelefono(telefono);
         
         
         container.persistIfNotAlready(obj);

@@ -31,7 +31,7 @@ public class QPersona extends org.datanucleus.api.jdo.query.PersistableExpressio
     public final StringExpression apellido;
     public final StringExpression nombre;
     public final dom.simple.QDireccion direccion;
-    public final StringExpression fechaNacimiento;
+    public final ObjectExpression<org.joda.time.LocalDate> fechaNacimiento;
     public final ObjectExpression<dom.simple.Persona.E_nacionalidad> nacionalidad;
     public final ObjectExpression<dom.simple.Persona.E_sexo> sexo;
     public final StringExpression telefono;
@@ -50,7 +50,7 @@ public class QPersona extends org.datanucleus.api.jdo.query.PersistableExpressio
         {
             this.direccion = null;
         }
-        this.fechaNacimiento = new StringExpressionImpl(this, "fechaNacimiento");
+        this.fechaNacimiento = new ObjectExpressionImpl<org.joda.time.LocalDate>(this, "fechaNacimiento");
         this.nacionalidad = new ObjectExpressionImpl<dom.simple.Persona.E_nacionalidad>(this, "nacionalidad");
         this.sexo = new ObjectExpressionImpl<dom.simple.Persona.E_sexo>(this, "sexo");
         this.telefono = new StringExpressionImpl(this, "telefono");
@@ -63,7 +63,7 @@ public class QPersona extends org.datanucleus.api.jdo.query.PersistableExpressio
         this.apellido = new StringExpressionImpl(this, "apellido");
         this.nombre = new StringExpressionImpl(this, "nombre");
         this.direccion = new dom.simple.QDireccion(this, "direccion", 5);
-        this.fechaNacimiento = new StringExpressionImpl(this, "fechaNacimiento");
+        this.fechaNacimiento = new ObjectExpressionImpl<org.joda.time.LocalDate>(this, "fechaNacimiento");
         this.nacionalidad = new ObjectExpressionImpl<dom.simple.Persona.E_nacionalidad>(this, "nacionalidad");
         this.sexo = new ObjectExpressionImpl<dom.simple.Persona.E_sexo>(this, "sexo");
         this.telefono = new StringExpressionImpl(this, "telefono");
