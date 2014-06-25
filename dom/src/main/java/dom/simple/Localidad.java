@@ -32,4 +32,12 @@ public class Localidad {
 	public String title(){
 		return nombre.toString();
 	}
+
+	@Override
+	public String toString() {
+		return nombre.toString();
+	}
+	
+	
+	
 }

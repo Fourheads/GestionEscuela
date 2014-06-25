@@ -90,6 +90,6 @@ public class Direccion {
 	// }}
 
 	public String title(){
-		return calle + " " + numero + ", " + localidad;
+		return calle + " " + numero;
 	}
 }
