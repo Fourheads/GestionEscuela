@@ -69,6 +69,7 @@ public class Alumnos {
         obj.setDni(dni);
         //obj.setDireccion(dire);
         
+        
         container.persistIfNotAlready(obj);
         return obj;
     }
