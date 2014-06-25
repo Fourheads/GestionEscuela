@@ -9,7 +9,8 @@ import org.apache.isis.applib.annotation.MemberOrder;
 import org.apache.isis.applib.annotation.Named;
 import org.apache.isis.applib.annotation.ActionSemantics.Of;
 
-import dom.simple.Persona.eSexo;
+import dom.simple.Persona.E_nacionalidad;
+import dom.simple.Persona.E_sexo;
 
 ///GestionEscuela
 
@@ -48,10 +49,12 @@ public class Alumnos {
     public Alumno create(
             final @Named("Nombre") String nombre,
             final @Named("Apellido") String apellido,
-            final @Named("Sexo") eSexo sexo,
+            final @Named("Sexo") E_sexo sexo,
             final @Named("DNI") int dni,
-            final @Named("Calle") String calle,
-            final @Named("Numero") int numero) {
+            final @Named("Nacionalidad") E_nacionalidad nacionalidad,
+            final @Named("Domicilio. Calle") String calle,
+            final @Named("Domicilio. Numero") int numero,
+            final @Named("Teléfono") String telefono) {
         final Alumno obj = container.newTransientInstance(Alumno.class);
         //final Direccion dire = new Direccion();
         //final Legajo legajo = new Legajo();

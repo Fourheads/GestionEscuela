@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="integration.specs.simple.RunSpecs" time="0.032" tests="8" errors="0" skipped="0" failures="0">
+<testsuite name="integration.specs.simple.RunSpecs" time="0.029" tests="8" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/java/jdk1.8.0_05/jre/lib/amd64"/>
@@ -58,12 +58,12 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="Given there are initially 3 simple objects" classname="Scenario: Existing simple objects can be listed and new ones created" time="0.003"/>
-  <testcase name="When I create a new simple object" classname="Scenario: Existing simple objects can be listed and new ones created" time="0.001"/>
-  <testcase name="Then there are 4 simple objects" classname="Scenario: Existing simple objects can be listed and new ones created" time="0.002"/>
-  <testcase name="Scenario: Existing simple objects can be listed and new ones created" classname="Scenario: Existing simple objects can be listed and new ones created" time="0.011"/>
   <testcase name="Given there are initially 3 simple objects" classname="Scenario: Existing simple objects can be listed and new ones created" time="0"/>
+  <testcase name="When I create a new simple object" classname="Scenario: Existing simple objects can be listed and new ones created" time="0.001"/>
+  <testcase name="Then there are 4 simple objects" classname="Scenario: Existing simple objects can be listed and new ones created" time="0"/>
+  <testcase name="Scenario: Existing simple objects can be listed and new ones created" classname="Scenario: Existing simple objects can be listed and new ones created" time="0.004"/>
+  <testcase name="Given there are initially 3 simple objects" classname="Scenario: Existing simple objects can be listed and new ones created" time="0.004"/>
   <testcase name="When I create a new simple object" classname="Scenario: Existing simple objects can be listed and new ones created" time="0"/>
   <testcase name="Then there are 4 simple objects" classname="Scenario: Existing simple objects can be listed and new ones created" time="0"/>
-  <testcase name="Scenario: Existing simple objects can be listed and new ones created" classname="Scenario: Existing simple objects can be listed and new ones created" time="0.015"/>
+  <testcase name="Scenario: Existing simple objects can be listed and new ones created" classname="Scenario: Existing simple objects can be listed and new ones created" time="0.02"/>
 </testsuite>

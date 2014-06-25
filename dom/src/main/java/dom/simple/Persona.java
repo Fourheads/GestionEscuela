@@ -92,32 +92,32 @@ public class Persona {
 
 	
 	// {{ Nacionalidad (property)
-	private String nacionalidad;
+	private E_nacionalidad nacionalidad;
 
 	@Persistent
 	@MemberOrder(sequence = "1")
 	@javax.jdo.annotations.Column(allowsNull="false")
-	public String getNacionalidad() {
+	public E_nacionalidad getNacionalidad() {
 		return nacionalidad;
 	}
 
-	public void setNacionalidad(final String nacionalidad) {
+	public void setNacionalidad(final E_nacionalidad nacionalidad) {
 		this.nacionalidad = nacionalidad;
 	}
 	// }}
 
 
 	// {{ Sexo (property)
-	private eSexo sexo;
+	private E_sexo sexo;
 
 	@Persistent
 	@MemberOrder(sequence = "1")
 	@javax.jdo.annotations.Column(allowsNull="false")
-	public eSexo getSexo() {
+	public E_sexo getSexo() {
 		return sexo;
 	}
 
-	public void setSexo(final eSexo sexo) {
+	public void setSexo(final E_sexo sexo) {
 		this.sexo = sexo;
 	}
 	// }}
@@ -140,9 +140,16 @@ public class Persona {
 
 
 
-	public enum eSexo{
+	public enum E_sexo{
 		
 		MASCULINO, FEMENINO
+	}
+	
+	public enum E_nacionalidad{
+		
+		ARGENTINA, BOLIVIA, BRASIL, CHILE, 
+		COLOMBIA, ECUADOR, PARAGUAY, PERU,
+		URUGUAY, VENEZUELA, OTRO
 	}
 
 }
