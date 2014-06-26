@@ -8,6 +8,7 @@ import org.apache.isis.applib.annotation.Bookmarkable;
 import org.apache.isis.applib.annotation.MemberOrder;
 import org.apache.isis.applib.annotation.Named;
 import org.apache.isis.applib.annotation.ActionSemantics.Of;
+import org.apache.isis.applib.annotation.Optional;
 import org.joda.time.LocalDate;
 
 import dom.simple.Localidad.E_localidades;
@@ -58,9 +59,9 @@ public class Alumnos {
             final @Named("Domicilio. Localidad") E_localidades localidad,
             final @Named("Domicilio. Calle") String calle,
             final @Named("Domicilio. Numero") int numero,
-            final @Named("Domicilio. Piso") int piso,
-            final @Named("Domicilio. Departamento") String departamento,
-            final @Named("Teléfono") String telefono) {
+            final @org.apache.isis.applib.annotation.Optional @Named("Domicilio. Piso") String piso,
+            final @org.apache.isis.applib.annotation.Optional @Named("Domicilio. Departamento") String departamento,
+            final @org.apache.isis.applib.annotation.Optional @Named("Teléfono") String telefono) {
         final Alumno obj = container.newTransientInstance(Alumno.class);
         final Direccion dire = new Direccion();
         final Localidad loca = new Localidad();

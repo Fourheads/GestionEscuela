@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="integration.tests.smoke.SimpleObjectsTest_listAll_and_create" time="0.555" tests="2" errors="0" skipped="0" failures="0">
+<testsuite name="integration.tests.smoke.SimpleObjectsTest_listAll_and_create" time="0.336" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/java/jdk1.8.0_05/jre/lib/amd64"/>
@@ -58,6 +58,6 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="create" classname="integration.tests.smoke.SimpleObjectsTest_listAll_and_create" time="0.42"/>
-  <testcase name="listAll" classname="integration.tests.smoke.SimpleObjectsTest_listAll_and_create" time="0.135"/>
+  <testcase name="create" classname="integration.tests.smoke.SimpleObjectsTest_listAll_and_create" time="0.225"/>
+  <testcase name="listAll" classname="integration.tests.smoke.SimpleObjectsTest_listAll_and_create" time="0.111"/>
 </testsuite>

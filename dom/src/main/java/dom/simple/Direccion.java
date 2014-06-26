@@ -41,16 +41,16 @@ public class Direccion {
 	// }}
 
 	// {{ Piso (property)
-	private int piso;
+	private String piso;
 
 	@Column(allowsNull = "true")
 	@Persistent
 	@MemberOrder(sequence = "1.1.1")
-	public int getPiso() {
+	public String getPiso() {
 		return piso;
 	}
 
-	public void setPiso(final int piso) {
+	public void setPiso(final String piso) {
 		this.piso = piso;
 	}
 	// }}
