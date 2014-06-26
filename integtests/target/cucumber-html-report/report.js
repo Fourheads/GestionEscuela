@@ -79,11 +79,11 @@ formatter.feature({
   ]
 });
 formatter.before({
-  "duration": 156763147,
+  "duration": 185089555,
   "status": "passed"
 });
 formatter.before({
-  "duration": 63515007,
+  "duration": 76133161,
   "status": "passed"
 });
 formatter.scenario({
@@ -139,14 +139,14 @@ formatter.match({
   "location": "SimpleObjectGlue.there_are_N_simple_objects(int)"
 });
 formatter.result({
-  "duration": 830533085,
+  "duration": 1123605008,
   "status": "passed"
 });
 formatter.match({
   "location": "SimpleObjectGlue.I_create_a_new_simple_object()"
 });
 formatter.result({
-  "duration": 36267405,
+  "duration": 100429962,
   "status": "passed"
 });
 formatter.match({
@@ -159,19 +159,19 @@ formatter.match({
   "location": "SimpleObjectGlue.there_are_N_simple_objects(int)"
 });
 formatter.result({
-  "duration": 962754,
+  "duration": 938055,
   "status": "passed"
 });
 formatter.after({
-  "duration": 486667,
+  "duration": 886497,
   "status": "passed"
 });
 formatter.before({
-  "duration": 10216601113,
+  "duration": 12588602718,
   "status": "passed"
 });
 formatter.before({
-  "duration": 311911644,
+  "duration": 305262800,
   "status": "passed"
 });
 formatter.scenario({
@@ -213,14 +213,14 @@ formatter.match({
   "location": "SimpleObjectGlue.there_are_N_simple_objects(int)"
 });
 formatter.result({
-  "duration": 306806303,
+  "duration": 317164995,
   "status": "passed"
 });
 formatter.match({
   "location": "SimpleObjectGlue.I_create_a_new_simple_object()"
 });
 formatter.result({
-  "duration": 4041303,
+  "duration": 15354818,
   "status": "passed"
 });
 formatter.match({
@@ -233,11 +233,11 @@ formatter.match({
   "location": "SimpleObjectGlue.there_are_N_simple_objects(int)"
 });
 formatter.result({
-  "duration": 11829285,
+  "duration": 24148814,
   "status": "passed"
 });
 formatter.after({
-  "duration": 12314982,
+  "duration": 23094307,
   "status": "passed"
 });
 });
