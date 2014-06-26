@@ -1,13 +1,13 @@
 Manifest-Version: 1.0
-Build-Java: 1.8.0_05
+Build-Time: 20140625-2116
+Build-Java: 1.7.0_13
+Build-OS: Windows 7
+Built-By: Sabrina
+Build-Jdk: 1.7.0_13
+Build-Maven: Maven 3.1.0
 Build-Label: 1.0-SNAPSHOT
-Archiver-Version: Plexus Archiver
-Built-By: leandro
+Created-By: Apache Maven 3.1.0
 Build-Host: 
-Build-Maven: Maven 3.2.1
-Build-Time: 20140625-0538
-Build-OS: Linux
-Build-User: leandro
-Created-By: Apache Maven 3.2.1
-Build-Jdk: 1.8.0_05
+Build-User: Sabrina
+Archiver-Version: Plexus Archiver
 
