@@ -16,11 +16,11 @@ public class Tarjeta implements Comparable<Tarjeta>{
 		@Persistent
 		@MemberOrder(sequence = "1")
 		@javax.jdo.annotations.Column(allowsNull="false")
-		public LocalDate getFechaNacimiento() {
+		public LocalDate getFecha() {
 			return fecha;
 		}
 
-		public void setFechaNacimiento(final LocalDate fecha) {
+		public void setFecha(final LocalDate fecha) {
 			this.fecha = fecha;
 		}
 		// }}

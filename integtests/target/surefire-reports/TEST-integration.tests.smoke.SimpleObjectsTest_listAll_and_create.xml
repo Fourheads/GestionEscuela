@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="integration.tests.smoke.SimpleObjectsTest_listAll_and_create" time="0.34" tests="2" errors="0" skipped="0" failures="0">
+<testsuite name="integration.tests.smoke.SimpleObjectsTest_listAll_and_create" time="0.316" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_13\jre\bin"/>
@@ -60,6 +60,6 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="create" classname="integration.tests.smoke.SimpleObjectsTest_listAll_and_create" time="0.276"/>
-  <testcase name="listAll" classname="integration.tests.smoke.SimpleObjectsTest_listAll_and_create" time="0.064"/>
+  <testcase name="create" classname="integration.tests.smoke.SimpleObjectsTest_listAll_and_create" time="0.259"/>
+  <testcase name="listAll" classname="integration.tests.smoke.SimpleObjectsTest_listAll_and_create" time="0.057"/>
 </testsuite>

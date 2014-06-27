@@ -15,6 +15,9 @@ import org.apache.isis.applib.annotation.MultiLine;
 import org.apache.isis.applib.annotation.Named;
 import org.apache.isis.applib.annotation.Render;
 import org.apache.isis.applib.annotation.Render.Type;
+import org.joda.time.LocalDate;
+
+import dom.simple.Tarjeta.ECategoria;
 
 @PersistenceCapable
 public class Legajo {	
@@ -26,10 +29,17 @@ public class Legajo {
 			final @Named("Titulo") String titulo,
 			final @MaxLength(2048)
 		    	  @MultiLine 
-		    	  @Named("Comentarios") String comentario){
+		    	  @Named("Comentarios") String comentario,
+		    final @Named("Categoria de Tarjeta") ECategoria categoria	  
+			){
+		
 		final Tarjeta tarjeta = new Tarjeta();
-		tarjeta.setTitulo(titulo);;
+		LocalDate fecha = LocalDate.now();
+		
+		tarjeta.setTitulo(titulo);
 		tarjeta.setComentario(comentario);
+		tarjeta.setFecha(fecha);
+		tarjeta.setCategoria(categoria);
 		addTarjeta(tarjeta);
 		return tarjeta;
 	}
