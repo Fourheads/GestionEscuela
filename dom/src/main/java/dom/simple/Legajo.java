@@ -28,7 +28,7 @@ public class Legajo {
 	@Column(allowsNull = "true", name = "TARJETAS_ID")
 	@MemberOrder(sequence = "1.1", name = "Nueva Tarjeta")
 	@Named("Nueva Tarjeta")
-	public Tarjeta create (
+	public Legajo create (
 			final @Named("Titulo") String titulo,
 			final @MaxLength(2048)
 		    	  @MultiLine 
@@ -47,7 +47,7 @@ public class Legajo {
 		
 		//container.persistIfNotAlready(tarjeta);
 		addTarjeta(tarjeta);
-		return tarjeta;
+		return this;
 	}
 	
 	// {{ Tarjetas (property)
