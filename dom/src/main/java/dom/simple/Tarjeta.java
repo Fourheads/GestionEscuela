@@ -4,16 +4,34 @@ import javax.jdo.annotations.*;
 
 import org.apache.isis.applib.annotation.MemberOrder;
 import org.apache.isis.applib.annotation.MultiLine;
+import org.joda.time.LocalDate;
 
 @PersistenceCapable
 public class Tarjeta implements Comparable<Tarjeta>{
 	
-	// {{ Titulo (property)
+		
+	// {{ Fecha (property)
+		private LocalDate fecha;
+
+		@Persistent
+		@MemberOrder(sequence = "1")
+		@javax.jdo.annotations.Column(allowsNull="false")
+		public LocalDate getFechaNacimiento() {
+			return fecha;
+		}
+
+		public void setFechaNacimiento(final LocalDate fecha) {
+			this.fecha = fecha;
+		}
+		// }}
+	
+	
+		// {{ Titulo (property)
 		private String titulo;
 
 		@Column(allowsNull = "false")
 		@Persistent
-		@MemberOrder(sequence = "1")
+		@MemberOrder(sequence = "1.1")
 		public String getTitulo() {
 			return titulo;
 		}
