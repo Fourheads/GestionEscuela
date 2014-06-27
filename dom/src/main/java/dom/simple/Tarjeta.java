@@ -5,7 +5,7 @@ import javax.jdo.annotations.*;
 import org.apache.isis.applib.annotation.MemberOrder;
 import org.apache.isis.applib.annotation.MultiLine;
 
-public class Tarjeta {
+public class Tarjeta implements Comparable<Tarjeta>{
 	
 	// {{ Titulo (property)
 		private String titulo;
@@ -37,6 +37,30 @@ public class Tarjeta {
 			this.comentarios = comentarios;
 		}
 		// }}
+		
+		// {{ Categoria (property)
+		private ECategoria categoria;
+
+		@MemberOrder(sequence = "1")
+		public ECategoria getCategoria() {
+			return categoria;
+		}
+
+		public void setCategoria(final ECategoria categoria) {
+			this.categoria = categoria;
+		}
+		// }}
+
+
+		//Considerar los tipos de categoría. No sé muy bien cuales son.
+		public enum ECategoria{
+			Certificacion, Notas, LlamadoDeAtencion;
+		}
+
+		@Override
+		public int compareTo(Tarjeta o) {			
+			return this.titulo.compareTo(o.titulo);
+		}
 
 		
 	
