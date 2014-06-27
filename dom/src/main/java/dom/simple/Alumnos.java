@@ -64,6 +64,7 @@ public class Alumnos {
         final Alumno obj = container.newTransientInstance(Alumno.class);
         final Direccion dire = new Direccion();
         final Localidad loca = new Localidad();
+        final Legajo legajo = new Legajo();
         
         String propietario = nombre.substring(0, 1) + ". " + apellido; 
         
@@ -81,6 +82,7 @@ public class Alumnos {
         obj.setDni(dni);
         obj.setFechaNacimiento(nacimiento);
         obj.setDireccion(dire);
+        obj.setLegajo(legajo);
         obj.setTelefono(telefono);
         
         

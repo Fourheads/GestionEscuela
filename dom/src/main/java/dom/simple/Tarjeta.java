@@ -5,12 +5,13 @@ import javax.jdo.annotations.*;
 import org.apache.isis.applib.annotation.MemberOrder;
 import org.apache.isis.applib.annotation.MultiLine;
 
+@PersistenceCapable
 public class Tarjeta implements Comparable<Tarjeta>{
 	
 	// {{ Titulo (property)
 		private String titulo;
 
-		@Column(allowsNull = "true")
+		@Column(allowsNull = "false")
 		@Persistent
 		@MemberOrder(sequence = "1")
 		public String getTitulo() {
@@ -40,8 +41,10 @@ public class Tarjeta implements Comparable<Tarjeta>{
 		
 		// {{ Categoria (property)
 		private ECategoria categoria;
-
-		@MemberOrder(sequence = "1")
+		
+		@Column(allowsNull = "false")
+		@Persistent
+		@MemberOrder(sequence = "1.3")
 		public ECategoria getCategoria() {
 			return categoria;
 		}
@@ -53,6 +56,7 @@ public class Tarjeta implements Comparable<Tarjeta>{
 
 
 		//Considerar los tipos de categoría. No sé muy bien cuales son.
+		//No los habiamos discutido, esos estan buenisimos (leo)
 		public enum ECategoria{
 			Certificacion, Notas, LlamadoDeAtencion;
 		}

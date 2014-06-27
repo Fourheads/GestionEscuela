@@ -1,10 +1,12 @@
 package dom.simple;
 
 import javax.jdo.annotations.IdentityType;
+import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.VersionStrategy;
 
 import org.apache.isis.applib.DomainObjectContainer;
 import org.apache.isis.applib.annotation.Bookmarkable;
+import org.apache.isis.applib.annotation.MemberOrder;
 import org.apache.isis.applib.annotation.ObjectType;
 import org.apache.isis.applib.util.ObjectContracts;
 
@@ -26,6 +28,22 @@ import org.apache.isis.applib.util.ObjectContracts;
 public class Alumno extends Persona implements Comparable<Alumno>{
 
 	
+	// {{ Legajo (property)
+	private Legajo legajo;
+
+	@Persistent
+	@MemberOrder(sequence = "8")
+	@javax.jdo.annotations.Column(allowsNull="false", name = "LEGAJO_ID")
+	public Legajo getLegajo() {
+		return legajo;
+	}
+
+	public void setLegajo(final Legajo legajo) {
+		this.legajo = legajo;
+	}
+	// }}
+
+
 	
 	
 	

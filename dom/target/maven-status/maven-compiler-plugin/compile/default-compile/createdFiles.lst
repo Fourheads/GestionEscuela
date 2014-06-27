@@ -10,7 +10,10 @@ dom/simple/QSimpleObject.class
 dom/simple/Persona$E_nacionalidad.class
 dom/simple/Legajo.class
 dom/simple/QPersona.class
+dom/simple/QLegajo.class
+dom/simple/Tarjeta$ECategoria.class
 dom/simple/Tarjeta.class
+dom/simple/QTarjeta.class
 dom/simple/Localidad.class
 dom/simple/QDireccion.class
 dom/simple/Alumnos.class
