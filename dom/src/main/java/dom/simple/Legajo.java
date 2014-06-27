@@ -8,6 +8,7 @@ import javax.jdo.annotations.Element;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 
+import org.apache.isis.applib.DomainObjectContainer;
 import org.apache.isis.applib.annotation.Hidden;
 import org.apache.isis.applib.annotation.MaxLength;
 import org.apache.isis.applib.annotation.MemberOrder;
@@ -41,6 +42,8 @@ public class Legajo {
 		tarjeta.setFecha(fecha);
 		tarjeta.setCategoria(categoria);
 		addTarjeta(tarjeta);
+		
+		container.persistIfNotAlready(tarjeta);
 		return tarjeta;
 	}
 	
@@ -84,5 +87,8 @@ public class Legajo {
 	public String title(){
 		return "Legajo de " + getPropietario();
 	}
+	
+	 @javax.inject.Inject 
+	 DomainObjectContainer container;
 	
 }
