@@ -66,7 +66,7 @@ public class Legajo {
 	}
 	// }}
 
-
+	@Hidden
 	public void addTarjeta(Tarjeta tarjeta){
 		this.tarjetas.add(tarjeta);			
 	}
