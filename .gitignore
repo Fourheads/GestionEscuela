@@ -1,12 +1,37 @@
+﻿#################
+## Eclipse
+#################
+.*~
+*.pydevproject
 *.class
-
-# Mobile Tools for Java (J2ME)
+.project
+.metadata
 .mtj.tmp/
-
-# Package Files #
+bin/
+tmp/
+datanucleus.log
+*.log
+*.tmp
+*.bak
+*.swp
 *.jar
 *.war
 *.ear
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+.externalToolBuilders/
+*.launch
+.cproject
+.buildpath
+target/
+old/
+target-ide/
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
