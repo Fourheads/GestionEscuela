@@ -39,6 +39,7 @@ public class Alumnos {
     @Bookmarkable
     @ActionSemantics(Of.SAFE)
     @MemberOrder(sequence = "1")
+    @Named ("Listar Alumnos")
     public List<Alumno> listAll() {
         return container.allInstances(Alumno.class);
     }
@@ -49,6 +50,7 @@ public class Alumnos {
     // //////////////////////////////////////
     
     @MemberOrder(sequence = "2")
+    @Named ("Crear Alumno")
     public Alumno create(
             final @Named("Nombre") String nombre,
             final @Named("Apellido") String apellido,
