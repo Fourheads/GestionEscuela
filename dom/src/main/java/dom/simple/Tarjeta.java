@@ -48,11 +48,11 @@ public class Tarjeta implements Comparable<Tarjeta>{
 		@Persistent
 		@MemberOrder(sequence = "1.2")
 		@MultiLine
-		public String getDetalle() {
+		public String getComentario() {
 			return comentarios;
 		}
 
-		public void setDetalle(final String comentarios) {
+		public void setComentario(final String comentarios) {
 			this.comentarios = comentarios;
 		}
 		// }}

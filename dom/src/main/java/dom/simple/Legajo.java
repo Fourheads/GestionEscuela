@@ -9,13 +9,31 @@ import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 
 import org.apache.isis.applib.annotation.Hidden;
+import org.apache.isis.applib.annotation.MaxLength;
 import org.apache.isis.applib.annotation.MemberOrder;
+import org.apache.isis.applib.annotation.MultiLine;
+import org.apache.isis.applib.annotation.Named;
 import org.apache.isis.applib.annotation.Render;
 import org.apache.isis.applib.annotation.Render.Type;
 
 @PersistenceCapable
-public class Legajo {
+public class Legajo {	
 
+	@Column(allowsNull = "true", name = "TARJETAS_ID")
+	@MemberOrder(sequence = "1.1", name = "Nueva Tarjeta")
+	@Named("Nueva Tarjeta")
+	public Tarjeta create (
+			final @Named("Titulo") String titulo,
+			final @MaxLength(2048)
+		    	  @MultiLine 
+		    	  @Named("Comentarios") String comentario){
+		final Tarjeta tarjeta = new Tarjeta();
+		tarjeta.setTitulo(titulo);;
+		tarjeta.setComentario(comentario);
+		addTarjeta(tarjeta);
+		return tarjeta;
+	}
+	
 	// {{ Tarjetas (property)
 	@Element(column = "TARJETA", dependent = "false") //EN dependent DEBERÍA IR true, ¿verdad?.
 	private SortedSet<Tarjeta> tarjetas = new TreeSet<Tarjeta>();
@@ -49,7 +67,9 @@ public class Legajo {
 	// }}
 
 
-	
+	public void addTarjeta(Tarjeta tarjeta){
+		this.tarjetas.add(tarjeta);			
+	}
 		
 	public String title(){
 		return "Legajo de " + getPropietario();

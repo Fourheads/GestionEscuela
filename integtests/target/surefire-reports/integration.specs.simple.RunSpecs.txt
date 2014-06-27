@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: integration.specs.simple.RunSpecs
 -------------------------------------------------------------------------------
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 21.809 sec - in integration.specs.simple.RunSpecs
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 17.52 sec - in integration.specs.simple.RunSpecs
