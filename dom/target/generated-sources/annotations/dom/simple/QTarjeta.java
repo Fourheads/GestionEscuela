@@ -27,6 +27,7 @@ public class QTarjeta extends org.datanucleus.api.jdo.query.PersistableExpressio
         return new QTarjeta(Tarjeta.class, name, ExpressionType.VARIABLE);
     }
 
+    public final ObjectExpression<org.joda.time.LocalDate> fecha;
     public final StringExpression titulo;
     public final StringExpression comentarios;
     public final ObjectExpression<dom.simple.Tarjeta.ECategoria> categoria;
@@ -34,6 +35,7 @@ public class QTarjeta extends org.datanucleus.api.jdo.query.PersistableExpressio
     public QTarjeta(PersistableExpression parent, String name, int depth)
     {
         super(parent, name);
+        this.fecha = new ObjectExpressionImpl<org.joda.time.LocalDate>(this, "fecha");
         this.titulo = new StringExpressionImpl(this, "titulo");
         this.comentarios = new StringExpressionImpl(this, "comentarios");
         this.categoria = new ObjectExpressionImpl<dom.simple.Tarjeta.ECategoria>(this, "categoria");
@@ -42,6 +44,7 @@ public class QTarjeta extends org.datanucleus.api.jdo.query.PersistableExpressio
     public QTarjeta(Class type, String name, org.datanucleus.api.jdo.query.ExpressionType exprType)
     {
         super(type, name, exprType);
+        this.fecha = new ObjectExpressionImpl<org.joda.time.LocalDate>(this, "fecha");
         this.titulo = new StringExpressionImpl(this, "titulo");
         this.comentarios = new StringExpressionImpl(this, "comentarios");
         this.categoria = new ObjectExpressionImpl<dom.simple.Tarjeta.ECategoria>(this, "categoria");

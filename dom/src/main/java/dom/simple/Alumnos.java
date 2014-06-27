@@ -76,6 +76,8 @@ public class Alumnos {
         dire.setDepartamento(departamento);
         dire.setLocalidad(loca);
         
+        legajo.setPropietario(propietario);
+        
         obj.setSexo(sexo);
         obj.setNombre(nombre);
         obj.setApellido(apellido);
