@@ -48,7 +48,7 @@ public class Localidad {
 
 
 	public enum E_localidades{	
-		Neuquen, Cipolletti, Plottier, Centenario, Roca, Allen;
+		NEUQUEN, CIPOLLETTI, PLOTTIER, CENTENARIO, ROCA, ALLEN;
 	}
 	
 	public String title(){
