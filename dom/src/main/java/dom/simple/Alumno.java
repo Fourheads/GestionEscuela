@@ -28,8 +28,10 @@ import javax.jdo.annotations.VersionStrategy;
 
 import org.apache.isis.applib.DomainObjectContainer;
 import org.apache.isis.applib.annotation.Bookmarkable;
+import org.apache.isis.applib.annotation.Hidden;
 import org.apache.isis.applib.annotation.MemberOrder;
 import org.apache.isis.applib.annotation.ObjectType;
+import org.apache.isis.applib.annotation.Where;
 import org.apache.isis.applib.util.ObjectContracts;
 
 
@@ -56,6 +58,7 @@ public class Alumno extends Persona implements Comparable<Alumno>{
 	@Persistent
 	@MemberOrder(sequence = "8")
 	@javax.jdo.annotations.Column(allowsNull="false", name = "LEGAJO_ID")
+	@Hidden(where = Where.ALL_TABLES)
 	public Legajo getLegajo() {
 		return legajo;
 	}

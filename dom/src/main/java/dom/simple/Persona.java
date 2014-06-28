@@ -25,7 +25,9 @@ package dom.simple;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 
+import org.apache.isis.applib.annotation.Hidden;
 import org.apache.isis.applib.annotation.MemberOrder;
+import org.apache.isis.applib.annotation.Where;
 import org.joda.time.LocalDate;
 
 
@@ -85,6 +87,7 @@ public class Persona {
 	// {{ Direccion (property)
 	private Direccion direccion;
 
+	@Hidden(where = Where.ALL_TABLES)
 	@Persistent
 	@MemberOrder(sequence = "7")
 	@javax.jdo.annotations.Column(allowsNull="false", name = "DIRECCION_ID")
@@ -136,6 +139,7 @@ public class Persona {
 	@Persistent
 	@MemberOrder(sequence = "4")
 	@javax.jdo.annotations.Column(allowsNull="false")
+	@Hidden(where = Where.ALL_TABLES)
 	public E_sexo getSexo() {
 		return sexo;
 	}
