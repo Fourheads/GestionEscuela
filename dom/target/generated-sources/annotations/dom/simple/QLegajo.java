@@ -29,12 +29,14 @@ public class QLegajo extends org.datanucleus.api.jdo.query.PersistableExpression
 
     public final CollectionExpression tarjetas;
     public final StringExpression propietario;
+    public final ObjectExpression<org.apache.isis.applib.DomainObjectContainer> container;
 
     public QLegajo(PersistableExpression parent, String name, int depth)
     {
         super(parent, name);
         this.tarjetas = new CollectionExpressionImpl(this, "tarjetas");
         this.propietario = new StringExpressionImpl(this, "propietario");
+        this.container = new ObjectExpressionImpl<org.apache.isis.applib.DomainObjectContainer>(this, "container");
     }
 
     public QLegajo(Class type, String name, org.datanucleus.api.jdo.query.ExpressionType exprType)
@@ -42,5 +44,6 @@ public class QLegajo extends org.datanucleus.api.jdo.query.PersistableExpression
         super(type, name, exprType);
         this.tarjetas = new CollectionExpressionImpl(this, "tarjetas");
         this.propietario = new StringExpressionImpl(this, "propietario");
+        this.container = new ObjectExpressionImpl<org.apache.isis.applib.DomainObjectContainer>(this, "container");
     }
 }

@@ -20,6 +20,8 @@ import org.joda.time.LocalDate;
 
 import dom.simple.Tarjeta.ECategoria;
 
+//GestionEscuela
+
 @PersistenceCapable
 public class Legajo {	
 
@@ -43,7 +45,8 @@ public class Legajo {
 		tarjeta.setCategoria(categoria);
 		addTarjeta(tarjeta);
 		
-		container.persistIfNotAlready(tarjeta);
+		//container.persistIfNotAlready(tarjeta);
+		addTarjeta(tarjeta);
 		return tarjeta;
 	}
 	
@@ -51,7 +54,7 @@ public class Legajo {
 	@Element(column = "TARJETA", dependent = "false") //EN dependent DEBERÍA IR true, ¿verdad?.
 	private SortedSet<Tarjeta> tarjetas = new TreeSet<Tarjeta>();
 	
-	@Persistent
+	//@Persistent
 	@Render(Type.EAGERLY)
 	@MemberOrder(sequence = "1")
 	public SortedSet<Tarjeta> getTarjetas() {
