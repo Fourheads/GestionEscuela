@@ -36,6 +36,7 @@ import org.apache.isis.applib.annotation.MaxLength;
 import org.apache.isis.applib.annotation.MemberOrder;
 import org.apache.isis.applib.annotation.MultiLine;
 import org.apache.isis.applib.annotation.Named;
+import org.apache.isis.applib.annotation.RegEx;
 import org.apache.isis.applib.annotation.Render;
 import org.apache.isis.applib.annotation.Render.Type;
 import org.joda.time.LocalDate;
@@ -51,7 +52,7 @@ public class Legajo {
 	@MemberOrder(sequence = "1.1", name = "Nueva Tarjeta")
 	@Named("Nueva Tarjeta")
 	public Legajo create (
-			final @Named("Titulo") String titulo,
+			final @RegEx(validation = "[A-Za-z]+") @Named("Titulo") String titulo,
 			final @MaxLength(2048)
 		    	  @MultiLine 
 		    	  @Named("Comentarios") String comentario,

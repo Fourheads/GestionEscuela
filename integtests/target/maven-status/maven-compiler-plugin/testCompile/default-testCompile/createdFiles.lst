@@ -2,8 +2,8 @@ integration/SimpleAppSystemInitializer$SimpleAppSystemBuilder.class
 integration/glue/simple/SimpleObjectGlue$2.class
 integration/glue/BootstrappingGlue.class
 integration/tests/SimpleAppIntegTest.class
-integration/glue/simple/SimpleObjectGlue$1.class
 integration/glue/simple/SimpleObjectGlue$3.class
+integration/glue/simple/SimpleObjectGlue$1.class
 integration/SimpleAppSystemInitializer.class
 integration/specs/simple/RunSpecs.class
 integration/glue/CatalogOfFixturesGlue.class

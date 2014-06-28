@@ -1,8 +1,8 @@
-/home/Aburgardt/GestionEscuela/GestionEscuela/integtests/src/test/java/integration/glue/BootstrappingGlue.java
-/home/Aburgardt/GestionEscuela/GestionEscuela/integtests/src/test/java/integration/SimpleAppSystemInitializer.java
-/home/Aburgardt/GestionEscuela/GestionEscuela/integtests/src/test/java/integration/glue/CatalogOfFixturesGlue.java
-/home/Aburgardt/GestionEscuela/GestionEscuela/integtests/src/test/java/integration/specs/simple/RunSpecs.java
-/home/Aburgardt/GestionEscuela/GestionEscuela/integtests/src/test/java/integration/tests/SimpleAppIntegTest.java
-/home/Aburgardt/GestionEscuela/GestionEscuela/integtests/src/test/java/integration/glue/simple/SimpleObjectGlue.java
-/home/Aburgardt/GestionEscuela/GestionEscuela/integtests/src/test/java/integration/glue/InMemoryDBForSimpleApp.java
-/home/Aburgardt/GestionEscuela/GestionEscuela/integtests/src/test/java/integration/tests/smoke/SimpleObjectsTest_listAll_and_create.java
+/home/putolinux/workspace/GestionEscuela/integtests/src/test/java/integration/glue/InMemoryDBForSimpleApp.java
+/home/putolinux/workspace/GestionEscuela/integtests/src/test/java/integration/SimpleAppSystemInitializer.java
+/home/putolinux/workspace/GestionEscuela/integtests/src/test/java/integration/glue/BootstrappingGlue.java
+/home/putolinux/workspace/GestionEscuela/integtests/src/test/java/integration/tests/SimpleAppIntegTest.java
+/home/putolinux/workspace/GestionEscuela/integtests/src/test/java/integration/tests/smoke/SimpleObjectsTest_listAll_and_create.java
+/home/putolinux/workspace/GestionEscuela/integtests/src/test/java/integration/glue/CatalogOfFixturesGlue.java
+/home/putolinux/workspace/GestionEscuela/integtests/src/test/java/integration/glue/simple/SimpleObjectGlue.java
+/home/putolinux/workspace/GestionEscuela/integtests/src/test/java/integration/specs/simple/RunSpecs.java
