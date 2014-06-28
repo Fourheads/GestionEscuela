@@ -54,7 +54,7 @@ public class Legajo {
 	@Element(column = "TARJETA", dependent = "false") //EN dependent DEBERÍA IR true, ¿verdad?.
 	private SortedSet<Tarjeta> tarjetas = new TreeSet<Tarjeta>();
 	
-	//@Persistent
+	//@Persistent no se usa cuando se usa @Element
 	@Render(Type.EAGERLY)
 	@MemberOrder(sequence = "1")
 	public SortedSet<Tarjeta> getTarjetas() {
