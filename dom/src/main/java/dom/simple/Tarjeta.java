@@ -98,7 +98,7 @@ public class Tarjeta implements Comparable<Tarjeta>{
 		//Considerar los tipos de categoría. No sé muy bien cuales son.
 		//No los habiamos discutido, esos estan buenisimos (leo)
 		public enum ECategoria{
-			Certificacion, Notas, LlamadoDeAtencion;
+			CERTIFICACION, NOTAS, LLAMADO_DE_ATENCION;
 		}
 
 		@Override
