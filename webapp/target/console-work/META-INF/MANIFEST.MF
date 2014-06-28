@@ -1,4 +1,5 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Build-Java: 1.8.0_05
 Build-Label: 1.0-SNAPSHOT
 Archiver-Version: Plexus Archiver
@@ -6,8 +7,17 @@ Built-By: leandro
 Build-Host: 
 Build-Maven: Maven 3.2.1
 Build-Time: 20140627-1306
+=======
+Build-Time: 20140628-1830
+Build-Java: 1.7.0_55
+>>>>>>> 494d1301859a27f0c292846bb60829cfe4991db9
 Build-OS: Linux
-Build-User: leandro
+Built-By: putolinux
+Build-Jdk: 1.7.0_55
+Build-Maven: Maven 3.2.1
+Build-Label: 1.0-SNAPSHOT
 Created-By: Apache Maven 3.2.1
-Build-Jdk: 1.8.0_05
+Build-Host: 
+Build-User: putolinux
+Archiver-Version: Plexus Archiver
 

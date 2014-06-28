@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project name="maven-antrun-" default="main"  >
 <target name="main">
-  <exec failonerror="true" executable="java">
+  <exec executable="java" failonerror="true">
     <arg value="-jar"/>
-    <arg value="/home/leandro/GestionEscuela/webapp/target/GestionEscuela-webapp-1.0-SNAPSHOT-jetty-console.war"/>
+    <arg value="/home/putolinux/workspace/GestionEscuela/webapp/target/GestionEscuela-webapp-1.0-SNAPSHOT-jetty-console.war"/>
   </exec>
 </target>
 </project>
