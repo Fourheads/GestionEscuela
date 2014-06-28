@@ -1,13 +1,13 @@
 Manifest-Version: 1.0
-Build-Java: 1.8.0_05
-Build-Label: 1.0-SNAPSHOT
-Archiver-Version: Plexus Archiver
-Built-By: leandro
-Build-Host: 
-Build-Maven: Maven 3.2.1
-Build-Time: 20140627-1144
+Build-Time: 20140628-1106
+Build-Java: 1.7.0_55
 Build-OS: Linux
-Build-User: leandro
+Built-By: Aburgardt
+Build-Jdk: 1.7.0_55
+Build-Maven: Maven 3.2.1
+Build-Label: 1.0-SNAPSHOT
 Created-By: Apache Maven 3.2.1
-Build-Jdk: 1.8.0_05
+Build-Host: 
+Build-User: Aburgardt
+Archiver-Version: Plexus Archiver
 

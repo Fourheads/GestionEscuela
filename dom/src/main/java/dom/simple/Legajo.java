@@ -40,7 +40,7 @@ public class Legajo {
 		LocalDate fecha = LocalDate.now();
 		
 		tarjeta.setTitulo(titulo);
-		tarjeta.setComentario(comentario);
+		tarjeta.setComentarios(comentario);
 		tarjeta.setFecha(fecha);
 		tarjeta.setCategoria(categoria);
 		addTarjeta(tarjeta);
