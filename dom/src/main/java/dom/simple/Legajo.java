@@ -50,7 +50,7 @@ public class Legajo {
 	@MemberOrder(sequence = "1.1", name = "Nueva Tarjeta")
 	@Named("Nueva Tarjeta")
 	public Legajo create (
-			final @RegEx(validation = "[A-Za-z]+") @Named("Titulo") String titulo,
+			final @Named("Titulo") String titulo,
 			final @MaxLength(2048)
 		    	  @MultiLine 
 		    	  @Named("Comentarios") String comentario,
