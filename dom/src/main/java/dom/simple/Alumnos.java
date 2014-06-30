@@ -72,6 +72,7 @@ public class Alumnos {
     // //////////////////////////////////////
     // Create (action)
     // //////////////////////////////////////
+      
     
     @MemberOrder(sequence = "2")
     @Named ("Crear Alumno")
@@ -79,16 +80,17 @@ public class Alumnos {
             final @RegEx(validation = "[A-Za-z]+") @Named("Nombre") String nombre,
             final @RegEx(validation = "[A-Za-z]+") @Named("Apellido") String apellido,
             final @Named("Sexo") E_sexo sexo,
-            final @Mask("NN.NNN.NNN") @Named("DNI") int dni,
+            final @RegEx(validation = "/d{6,10}") @Named("DNI") int dni, 
             final @Named("Fecha Nacimiento") LocalDate nacimiento,
             final @Named("Nacionalidad") E_nacionalidad nacionalidad,
             final @Named("Domicilio. Localidad") E_localidades localidad,
             final @Named("Domicilio. Calle") String calle,
-            final @Mask("NNNN") @Named("Domicilio. Numero") int numero,
-            final @org.apache.isis.applib.annotation.Optional @Named("Domicilio. Piso") String piso,
+            final @RegEx(validation = "/d{5}") @Named("Domicilio. Numero") int numero,
+            final @RegEx(validation = "/d+")@org.apache.isis.applib.annotation.Optional @Named("Domicilio. Piso") String piso,
             final @org.apache.isis.applib.annotation.Optional @Named("Domicilio. Departamento") String departamento,
-            @SuppressWarnings("deprecation") final @Mask("(NNNN)NNN-NNNNNNN") @org.apache.isis.applib.annotation.Optional @Named("Teléfono") String telefono) {
-        final Alumno obj = container.newTransientInstance(Alumno.class);
+            @RegEx(validation = "/d+") @SuppressWarnings("deprecation") final @Mask("(NNNN)NNN-NNNNNNN") @org.apache.isis.applib.annotation.Optional @Named("Teléfono") String telefono) {
+        
+    	final Alumno obj = container.newTransientInstance(Alumno.class);
         final Direccion dire = new Direccion();
         final Localidad loca = new Localidad();
         final Legajo legajo = new Legajo();
@@ -119,6 +121,13 @@ public class Alumnos {
         return obj;
     }
 
+	private LocalDate choices0FechaNacimiento()
+	{
+		LocalDate dt=new LocalDate();
+		LocalDate dtmax=dt.now().year().withMaximumValue();
+		return dt;
+	}
+    
     // //////////////////////////////////////
     // Injected services
     // //////////////////////////////////////
