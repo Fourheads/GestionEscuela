@@ -1,5 +1,5 @@
 package dom.simple;
 
-public class Personal {
+public class Personal extends Persona{
 
 }
