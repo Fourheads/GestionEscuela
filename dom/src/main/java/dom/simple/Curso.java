@@ -15,7 +15,9 @@ public class Curso {
 	}
 	private List<Materia> Materias;
 	private List<Alumno> Alumnos;
-	private Preceptor Preceptor;
+	//private Preceptor Preceptor;
+	private Personal Preceptor;
+	
 	public Turno getTurno() {
 		return Turno;
 	}
@@ -40,10 +42,10 @@ public class Curso {
 	public void setAlumnos(List<Alumno> alumnos) {
 		Alumnos = alumnos;
 	}
-	public Preceptor getPreceptor() {
+	public Personal getPreceptor() {
 		return Preceptor;
 	}
-	public void setPreceptor(Preceptor preceptor) {
+	public void setPreceptor(Personal preceptor) {
 		Preceptor = preceptor;
 	}
 	
