@@ -52,6 +52,7 @@ import org.apache.isis.applib.util.ObjectContracts;
 public class Alumno extends Persona implements Comparable<Alumno>{
 
 	
+	
 	// {{ Legajo (property)
 	private Legajo legajo;
 
