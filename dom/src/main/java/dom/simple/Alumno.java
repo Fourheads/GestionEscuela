@@ -42,6 +42,13 @@ import org.apache.isis.applib.util.ObjectContracts;
 @javax.jdo.annotations.Version(
         strategy=VersionStrategy.VERSION_NUMBER, 
         column="version")
+@javax.jdo.annotations.Queries( {
+    @javax.jdo.annotations.Query(
+            name = "findByDni", language = "JDOQL",
+            value = "SELECT "
+                    + "FROM dom.simple.Alumno "
+                    + "WHERE dni == :dni")
+})
 @ObjectType("ALUMNO")
 @Bookmarkable
 
