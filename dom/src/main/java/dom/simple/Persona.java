@@ -22,6 +22,8 @@
 
 package dom.simple;
 
+import javax.jdo.annotations.Inheritance;
+import javax.jdo.annotations.InheritanceStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 
@@ -34,6 +36,7 @@ import org.joda.time.LocalDate;
 ///GestionEscuela
 
 @PersistenceCapable
+@Inheritance(strategy=InheritanceStrategy.SUBCLASS_TABLE)
 public class Persona {
 	
 	// {{ Dni (property)
