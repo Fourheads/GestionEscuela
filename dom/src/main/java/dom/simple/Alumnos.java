@@ -30,14 +30,17 @@ import org.apache.isis.applib.annotation.Bookmarkable;
 import org.apache.isis.applib.annotation.Mask;
 import org.apache.isis.applib.annotation.MemberOrder;
 import org.apache.isis.applib.annotation.Named;
+import org.apache.isis.applib.annotation.Programmatic;
 import org.apache.isis.applib.annotation.ActionSemantics.Of;
 import org.apache.isis.applib.annotation.Optional;
 import org.apache.isis.applib.annotation.RegEx;
+import org.apache.isis.applib.query.QueryDefault;
 import org.joda.time.LocalDate;
 
 import dom.simple.Localidad.E_localidades;
 import dom.simple.Persona.E_nacionalidad;
 import dom.simple.Persona.E_sexo;
+
 
 ///GestionEscuela
 
@@ -128,6 +131,28 @@ public class Alumnos {
 		return dt;
 	}
     
+	// //////////////////////////////////////
+    // FindByDni (action)
+    // //////////////////////////////////////
+	
+	@MemberOrder(sequence = "2")
+    @Named ("Listar por DNI")
+    public List<Alumno> ListByDni(
+            final @Named("DNI") int dni){
+		
+		return listByDni(dni);
+		
+	}
+	
+	
+	@Programmatic
+    public List<Alumno> listByDni(int dni) {
+        return container.allMatches(
+            new QueryDefault<Alumno>(Alumno.class, 
+                    "findByDni", 
+                    "dni", dni));
+    }
+	
     // //////////////////////////////////////
     // Injected services
     // //////////////////////////////////////
