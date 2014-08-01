@@ -1,55 +1,120 @@
+/*
+ * This is a software made for highschool management 
+ * 
+ * Copyright (C) 2014, Fourheads
+ * 
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * 
+ * 
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+*/
+
+
 package dom.simple;
 
 import java.util.List;
 
+import javax.jdo.annotations.Column;
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
+
+import org.apache.isis.applib.annotation.MemberOrder;
+
+
+@PersistenceCapable
 public class Curso {
 	
-	private Turno Turno;
-	private int Año;
+	// {{ Division (property)
 	private String Division;
+
+	@Column(allowsNull = "true")
+	@Persistent
+	@MemberOrder(sequence = "1.1")
 	public String getDivision() {
 		return Division;
 	}
-	public void setDivision(String division) {
-		Division = division;
+	public void setDivision(String Division) {
+		this.Division = Division;
 	}
-	private List<Materia> Materias;
-	private List<Alumno> Alumnos;
-	//private Preceptor Preceptor;
-	private Personal Preceptor;
+	//}}
 	
+	// {{ Turno (property)
+	private Turno Turno;
+
+	@Column(allowsNull = "true")
+	@Persistent
+	@MemberOrder(sequence = "1.2")
 	public Turno getTurno() {
 		return Turno;
 	}
-	public void setTurno(Turno turno) {
-		Turno = turno;
+	public void setTurno(Turno Turno) {
+		this.Turno = Turno;
 	}
+	//}}
+	
+	// {{ Anio (property)
+	private int Anio;
+
+	@Column(allowsNull = "true")
+	@Persistent
+	@MemberOrder(sequence = "1.3")
 	public int getAño() {
-		return Año;
+		return Anio;
 	}
-	public void setAño(int año) {
-		Año = año;
+	public void setAño(int Anio) {
+		this.Anio = Anio;
 	}
+	//}}	
+
+	// {{ Materias (property)
+	private List<Materia> Materias;
+
+	@Persistent
+	@MemberOrder(sequence = "1.4")
 	public List<Materia> getMaterias() {
 		return Materias;
 	}
-	public void setMaterias(List<Materia> materias) {
-		Materias = materias;
+	public void setMaterias(List<Materia> Materias) {
+		this.Materias = Materias;
 	}
+	//}}
+	
+	// {{ Alumnos (property)
+	private List<Alumno> Alumnos;
+	
+	@Column(allowsNull = "true")
+	@Persistent
+	@MemberOrder(sequence = "1.5")
 	public List<Alumno> getAlumnos() {
 		return Alumnos;
 	}
-	public void setAlumnos(List<Alumno> alumnos) {
-		Alumnos = alumnos;
+	public void setAlumnos(List<Alumno> Alumnos) {
+		this.Alumnos = Alumnos;
 	}
+	//}}
+	
+	// {{ Preceptor (property)
+	private Personal Preceptor;
+	
+	@Column(allowsNull = "true")
+	@Persistent
+	@MemberOrder(sequence = "1.6")
 	public Personal getPreceptor() {
 		return Preceptor;
 	}
-	public void setPreceptor(Personal preceptor) {
-		Preceptor = preceptor;
+	public void setPreceptor(Personal Preceptor) {
+		this.Preceptor = Preceptor;
 	}
-	
-	
-	
-
+	//}}
 }

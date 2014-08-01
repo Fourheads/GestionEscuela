@@ -124,7 +124,7 @@ public class Alumnos {
         return obj;
     }
 
-	private LocalDate choices0FechaNacimiento()
+	private LocalDate choices0FechaNacimiento()//VALIDAR FECHA!!!
 	{
 		LocalDate dt=new LocalDate();
 		LocalDate dtmax=dt.now().year().withMaximumValue();
