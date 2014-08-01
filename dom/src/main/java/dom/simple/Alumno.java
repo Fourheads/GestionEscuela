@@ -47,7 +47,12 @@ import org.apache.isis.applib.util.ObjectContracts;
             name = "findByDni", language = "JDOQL",
             value = "SELECT "
                     + "FROM dom.simple.Alumno "
-                    + "WHERE dni == :dni")
+                    + "WHERE dni == :dni"),
+    @javax.jdo.annotations.Query(
+            name = "findByApellido", language = "JDOQL",
+            value = "SELECT "
+                    + "FROM dom.simple.Alumno "
+                    + "WHERE apellido.startsWith(:apellido)")
 })
 @ObjectType("ALUMNO")
 @Bookmarkable

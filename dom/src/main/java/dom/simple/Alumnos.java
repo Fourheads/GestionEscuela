@@ -136,21 +136,41 @@ public class Alumnos {
     // //////////////////////////////////////
 	
 	@MemberOrder(sequence = "2")
-    @Named ("Listar por DNI")
-    public List<Alumno> ListByDni(
-            final @Named("DNI") int dni){
+    @Named ("Buscar por DNI")
+    public List<Alumno> findByDni(
+            final @Named("DNI a Buscar") int dni){
 		
-		return listByDni(dni);
+		return findByDniQuery(dni);
 		
 	}
-	
-	
+		
 	@Programmatic
-    public List<Alumno> listByDni(int dni) {
+    public List<Alumno> findByDniQuery(int dni) {
         return container.allMatches(
             new QueryDefault<Alumno>(Alumno.class, 
                     "findByDni", 
                     "dni", dni));
+    }
+	
+	// //////////////////////////////////////
+    // FindByApellido (action)
+    // //////////////////////////////////////
+	
+	@MemberOrder(sequence = "3")
+    @Named ("Buscar por Apellido")
+    public List<Alumno> findByApellido(
+            final @Named("Apellido a Buscar") String apellido){
+		
+		return findByApellidoQuery(apellido);
+		
+	}
+		
+	@Programmatic
+    public List<Alumno> findByApellidoQuery(String apellido) {
+        return container.allMatches(
+            new QueryDefault<Alumno>(Alumno.class, 
+                    "findByApellido", 
+                    "apellido", apellido));
     }
 	
     // //////////////////////////////////////
