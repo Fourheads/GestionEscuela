@@ -9,6 +9,7 @@ dom/simple/QSimpleObject.class
 dom/simple/Persona$E_nacionalidad.class
 dom/simple/Legajo.class
 dom/simple/Funcion.class
+dom/simple/QCurso.class
 dom/simple/QPersona.class
 dom/simple/Localidad.class
 dom/simple/QPersonal.class

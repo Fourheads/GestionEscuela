@@ -159,7 +159,7 @@ public class Alumnos {
 	@MemberOrder(sequence = "3")
     @Named ("Buscar por Apellido")
     public List<Alumno> findByApellido(
-            final @Named("Apellido a Buscar") String apellido){
+            final @Named("Apellidos que comienzan con") String apellido){
 		
 		return findByApellidoQuery(apellido);
 		
