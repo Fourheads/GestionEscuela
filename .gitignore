@@ -26,10 +26,10 @@ local.properties
 *.launch
 .cproject
 .buildpath
-target/
+*/*/target
+*/target
 old/
-target-ide/
-target/
+*/target-ide
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
