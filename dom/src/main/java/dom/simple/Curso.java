@@ -26,95 +26,111 @@ package dom.simple;
 import java.util.List;
 
 import javax.jdo.annotations.Column;
+import javax.jdo.annotations.Element;
+import javax.jdo.annotations.Join;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 
 import org.apache.isis.applib.annotation.MemberOrder;
+import org.apache.isis.applib.annotation.Title;
 
 
 @PersistenceCapable
 public class Curso {
 	
 	// {{ Division (property)
-	private String Division;
+	private String division;
 
-	@Column(allowsNull = "true")
 	@Persistent
+	@Title
+	@Column(allowsNull = "true")
 	@MemberOrder(sequence = "1.1")
 	public String getDivision() {
-		return Division;
+		return division;
 	}
-	public void setDivision(String Division) {
-		this.Division = Division;
+	public void setDivision(String division) {
+		this.division = division;
 	}
 	//}}
 	
 	// {{ Turno (property)
-	private Turno Turno;
-
-	@Column(allowsNull = "true")
+	private Turno turno;
+	
 	@Persistent
+	@Title
+	@Column(allowsNull = "true")
 	@MemberOrder(sequence = "1.2")
 	public Turno getTurno() {
-		return Turno;
+		return turno;
 	}
-	public void setTurno(Turno Turno) {
-		this.Turno = Turno;
+	public void setTurno(Turno turno) {
+		this.turno = turno;
 	}
 	//}}
 	
 	// {{ Anio (property)
-	private int Anio;
+	private int anio;
 
-	@Column(allowsNull = "true")
 	@Persistent
+	@Title
+	@Column(allowsNull = "true")
 	@MemberOrder(sequence = "1.3")
 	public int getAño() {
-		return Anio;
+		return anio;
 	}
-	public void setAño(int Anio) {
-		this.Anio = Anio;
+	public void setAño(int anio) {
+		this.anio = anio;
 	}
 	//}}	
 
 	// {{ Materias (property)
-	private List<Materia> Materias;
+	private List<Materia> materias;
 
-	@Persistent
+	@Title
+	@Element(column="Materia_ID")
 	@MemberOrder(sequence = "1.4")
 	public List<Materia> getMaterias() {
-		return Materias;
+		return materias;
 	}
-	public void setMaterias(List<Materia> Materias) {
-		this.Materias = Materias;
+	public void setMaterias(final List<Materia> materias) {
+		this.materias = materias;
+	}
+	
+	public void addMaterias(Materia NuevaMateria){
+		this.materias.add(NuevaMateria);
 	}
 	//}}
 	
 	// {{ Alumnos (property)
-	private List<Alumno> Alumnos;
+	private List<Alumno> alumnos;
 	
+	@Title
 	@Column(allowsNull = "true")
-	@Persistent
+	@Element(column="Alumno_id")
 	@MemberOrder(sequence = "1.5")
 	public List<Alumno> getAlumnos() {
-		return Alumnos;
+		return alumnos;
 	}
-	public void setAlumnos(List<Alumno> Alumnos) {
-		this.Alumnos = Alumnos;
+	public void setAlumnos(final List<Alumno> Alumnos) {
+		this.alumnos = Alumnos;
+	}
+	public void addAlumno(Alumno NuevaAlumno){
+		this.alumnos.add(NuevaAlumno);
 	}
 	//}}
 	
 	// {{ Preceptor (property)
-	private Personal Preceptor;
+	private Personal preceptor;
 	
-	@Column(allowsNull = "true")
 	@Persistent
+	@Title
+	@Column(allowsNull = "true")
 	@MemberOrder(sequence = "1.6")
 	public Personal getPreceptor() {
-		return Preceptor;
+		return preceptor;
 	}
 	public void setPreceptor(Personal Preceptor) {
-		this.Preceptor = Preceptor;
+		this.preceptor = Preceptor;
 	}
 	//}}
 }
