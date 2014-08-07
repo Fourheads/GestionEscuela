@@ -87,7 +87,7 @@ public class Curso {
 	private List<Materia> materias;
 
 	@Title
-	@Element(column="Materia_ID")
+	//@Element(column="Materia_ID")
 	@MemberOrder(sequence = "1.4")
 	public List<Materia> getMaterias() {
 		return materias;
