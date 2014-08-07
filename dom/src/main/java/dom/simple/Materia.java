@@ -24,7 +24,6 @@ package dom.simple;
 
 import javax.jdo.annotations.Column;
 import javax.jdo.annotations.PersistenceCapable;
-
 import org.apache.isis.applib.annotation.MemberOrder;
 
 @PersistenceCapable
