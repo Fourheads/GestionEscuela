@@ -24,7 +24,6 @@ package dom.simple;
 
 import javax.jdo.annotations.Column;
 import javax.jdo.annotations.PersistenceCapable;
-import javax.jdo.annotations.Persistent;
 
 import org.apache.isis.applib.annotation.MemberOrder;
 
@@ -63,5 +62,4 @@ public class Materia {
 	public void setProfesor(Personal profesor) {
 		Profesor = profesor;
 	}
-
 }
