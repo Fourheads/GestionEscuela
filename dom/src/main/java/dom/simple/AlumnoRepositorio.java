@@ -124,10 +124,18 @@ public class AlumnoRepositorio {
         return obj;
     }
 
-	private LocalDate choices0FechaNacimiento()//VALIDAR FECHA!!!
+	private LocalDate validateFechaNacimiento(final LocalDate nacimiento)//VALIDAR FECHA!!!
 	{
 		LocalDate dt=new LocalDate();
-		LocalDate dtmax=dt.now().year().withMaximumValue();
+		LocalDate dtmax=dt.now();
+		if(nacimiento.isBefore(dtmax) )
+		{
+			
+		}
+		else
+		{
+			
+		}
 		return dt;
 	}
     
