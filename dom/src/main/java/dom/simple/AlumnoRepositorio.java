@@ -44,6 +44,7 @@ import dom.simple.Persona.E_sexo;
 
 ///GestionEscuela
 
+@Named("Alumnos")
 public class AlumnoRepositorio {
 
 

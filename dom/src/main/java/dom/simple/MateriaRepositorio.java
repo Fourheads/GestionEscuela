@@ -31,16 +31,15 @@ import org.apache.isis.applib.annotation.MaxLength;
 import org.apache.isis.applib.annotation.MemberOrder;
 import org.apache.isis.applib.annotation.MultiLine;
 import org.apache.isis.applib.annotation.Named;
-import org.apache.isis.applib.annotation.ObjectType;
 import org.apache.isis.applib.annotation.RegEx;
 import org.apache.isis.applib.annotation.ActionSemantics.Of;
 import org.joda.time.LocalDate;
 
-@ObjectType("Materias")
+@Named("Materias")
 public class MateriaRepositorio {
 	
 	private Personal TraerPersonal(){
-		Personal pe=new Personal();
+		Personal pe=container.newTransientInstance(Personal.class);
 		pe.setApellido("lasjdas");
 		pe.setNombre("Gogo");
 		pe.setDni(213213213);
@@ -52,6 +51,8 @@ public class MateriaRepositorio {
 		Funcion Fu=new Funcion();
 		Fu.setNombre(dom.simple.Funcion.E_funciones.PRECEPTOR);
 		pe.addFuncion(Fu);
+		container.persistIfNotAlready(pe);
+		container.flush();
 		return pe;
 		}
 		/*
@@ -107,7 +108,7 @@ public class MateriaRepositorio {
         @Named ("Crear Materia")
         public Materia create(
                 final @RegEx(validation = "[A-Za-z]+") @Named("Nombre") String Nombre,
-                final @RegEx(validation = "[A-Za-z0-9]+") @MaxLength(2048)
+                final @RegEx(validation = ".+") @MaxLength(2048)
 		    	@MultiLine @Named("Programa") String Programa)//,
                 //final @Named("Prceptor") Personal preceptor) {
         {
