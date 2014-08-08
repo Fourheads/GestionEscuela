@@ -23,7 +23,7 @@
 
 package dom.simple;
 
-import java.util.List;
+//import java.util.List;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
