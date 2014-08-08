@@ -24,7 +24,10 @@ package dom.simple;
 
 import javax.jdo.annotations.Column;
 import javax.jdo.annotations.PersistenceCapable;
+
+import org.apache.isis.applib.annotation.MaxLength;
 import org.apache.isis.applib.annotation.MemberOrder;
+import org.apache.isis.applib.annotation.MultiLine;
 
 @PersistenceCapable
 public class Materia {
@@ -42,6 +45,8 @@ public class Materia {
 	
 	private String Programa;
 	
+	final @MaxLength(2048)
+	@MultiLine 
 	@Column(allowsNull = "true")
 	@MemberOrder(sequence = "1.2")
 	public String getPrograma() {
