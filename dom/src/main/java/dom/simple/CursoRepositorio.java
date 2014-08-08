@@ -30,9 +30,11 @@ import org.apache.isis.applib.annotation.ActionSemantics;
 import org.apache.isis.applib.annotation.Bookmarkable;
 import org.apache.isis.applib.annotation.MemberOrder;
 import org.apache.isis.applib.annotation.Named;
+import org.apache.isis.applib.annotation.ObjectType;
 import org.apache.isis.applib.annotation.RegEx;
 import org.apache.isis.applib.annotation.ActionSemantics.Of;
 
+@ObjectType("Cursos")
 public class CursoRepositorio {
 	
     // //////////////////////////////////////
@@ -54,7 +56,7 @@ public class CursoRepositorio {
     @Bookmarkable
     @ActionSemantics(Of.SAFE)
     @MemberOrder(sequence = "1")
-    @Named ("Curso")
+    @Named ("Listar Cursos")
     public List<Curso> listAll() {
         return container.allInstances(Curso.class);
     }
