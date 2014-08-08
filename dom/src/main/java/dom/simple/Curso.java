@@ -90,15 +90,15 @@ public class Curso {
 	// {{ Materias (Property)
 	@Join
 	@Element(dependent = "true")
-	private SortedSet<Materia> collectionName = new TreeSet<Materia>();
+	private SortedSet<Materia> ListaMateria = new TreeSet<Materia>();
 
-	@MemberOrder(sequence = "1")
+	@MemberOrder(sequence = "1.4")
 	public SortedSet<Materia> getListaMateria() {
-		return collectionName;
+		return ListaMateria;
 	}
 
-	public void setListaMateria(final SortedSet<Materia> collectionName) {
-		this.collectionName = collectionName;
+	public void setListaMateria(final SortedSet<Materia> listamateria) {
+		this.ListaMateria = listamateria;
 	}
 	// }}
 	/*
@@ -117,7 +117,23 @@ public class Curso {
 	}
 	//}}*/
 	
-	// {{ Alumnos (property)
+	
+	// {{ Alumnos (Property)
+	@Join
+	@Element(dependent = "true")
+	private SortedSet<Alumno> ListaAlumno = new TreeSet<Alumno>();
+
+	@MemberOrder(sequence = "1.5")
+	public SortedSet<Alumno> getAlumnos() {
+		return ListaAlumno;
+	}
+
+	public void setAlumnos(final SortedSet<Alumno> listaalumno) {
+		this.ListaAlumno = listaalumno;
+	}
+	// }}
+	
+	/*
 	private List<Alumno> alumnos;
 	
 	@Title
@@ -133,7 +149,7 @@ public class Curso {
 	public void addAlumno(Alumno NuevaAlumno){
 		this.alumnos.add(NuevaAlumno);
 	}
-	//}}
+	//}}*/
 	
 	// {{ Preceptor (property)
 	private Personal preceptor;
