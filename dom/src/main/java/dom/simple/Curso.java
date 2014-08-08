@@ -33,6 +33,7 @@ import javax.jdo.annotations.Join;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 
+import org.apache.isis.applib.annotation.Hidden;
 import org.apache.isis.applib.annotation.MemberOrder;
 import org.apache.isis.applib.annotation.Title;
 
@@ -97,6 +98,11 @@ public class Curso {
 
 	public void setListaMateria(final SortedSet<Materia> listamateria) {
 		this.ListaMateria = listamateria;
+	}
+	
+	@Hidden
+	public void addMateria(Materia materia){
+		this.ListaMateria.add(materia);			
 	}
 	// }}
 	
