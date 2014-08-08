@@ -24,5 +24,17 @@
 package dom.simple;
 
 public class MateriaRepositorio {
+	
+    // //////////////////////////////////////
+    // Identification in the UI
+    // //////////////////////////////////////
+
+    public String getId() {
+        return "Materia";
+    }
+
+    public String iconName() {
+        return "SimpleObject";
+    }
 
 }
