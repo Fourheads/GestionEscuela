@@ -20,8 +20,19 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 */
 
-
 package dom.simple;
+
+import java.util.List;
+
+import org.apache.isis.applib.DomainObjectContainer;
+import org.apache.isis.applib.annotation.ActionSemantics;
+import org.apache.isis.applib.annotation.Bookmarkable;
+import org.apache.isis.applib.annotation.MaxLength;
+import org.apache.isis.applib.annotation.MemberOrder;
+import org.apache.isis.applib.annotation.MultiLine;
+import org.apache.isis.applib.annotation.Named;
+import org.apache.isis.applib.annotation.RegEx;
+import org.apache.isis.applib.annotation.ActionSemantics.Of;
 
 public class MateriaRepositorio {
 	
@@ -36,5 +47,51 @@ public class MateriaRepositorio {
     public String iconName() {
         return "SimpleObject";
     }
+    
+ // //////////////////////////////////////
+    // List (action)
+    // //////////////////////////////////////
+    
+    @Bookmarkable
+    @ActionSemantics(Of.SAFE)
+    @MemberOrder(sequence = "1")
+    @Named ("Materia")
+    public List<Materia> listAll() {
+        return container.allInstances(Materia.class);
+    }
+        
 
-}
+        // //////////////////////////////////////
+        // Create (action)
+        // //////////////////////////////////////
+          
+        
+        @MemberOrder(sequence = "2")
+        @Named ("Crear Materia")
+        public Materia create(
+                final @RegEx(validation = "[A-Za-Z]+") @Named("Nombre") String Nombre,
+                final @RegEx(validation = "[A-Za-Z]+") @MaxLength(2048)
+		    	@MultiLine @Named("Programa") String Programa,
+                final @RegEx(validation = "[A-Za-z]+") @Named("Prceptor") Personal preceptor) {
+            
+        	final Materia obj = container.newTransientInstance(Materia.class);
+            final Personal pe=new Personal();
+            
+            obj.setNombre(Nombre);
+            obj.setPrograma(Programa);
+            obj.setProfesor(pe);
+            
+            //¿Como sigo???
+        	
+            container.persistIfNotAlready(obj);
+            return obj;
+        }
+        
+        // //////////////////////////////////////
+        // Injected services
+        // //////////////////////////////////////
+
+        @javax.inject.Inject 
+        DomainObjectContainer container;
+    }
+
