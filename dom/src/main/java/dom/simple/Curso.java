@@ -85,8 +85,6 @@ public class Curso {
 	}
 	//}}	
 
-	//private List<Materia> materias;
-
 	// {{ Materias (Property)
 	@Join
 	@Element(dependent = "true")
@@ -101,6 +99,8 @@ public class Curso {
 		this.ListaMateria = listamateria;
 	}
 	// }}
+	
+	//private List<Materia> materias;
 	/*
 	@Title
 	//@Element(column="Materia_ID")
