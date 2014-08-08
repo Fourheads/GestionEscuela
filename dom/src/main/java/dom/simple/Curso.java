@@ -137,6 +137,12 @@ public class Curso {
 	public void setAlumnos(final SortedSet<Alumno> listaalumno) {
 		this.ListaAlumno = listaalumno;
 	}
+	
+	@Hidden
+	public void addAlumnos(Alumno alumno){
+		this.ListaAlumno.add(alumno);			
+	}
+	
 	// }}
 	
 	/*
