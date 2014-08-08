@@ -24,5 +24,17 @@
 package dom.simple;
 
 public class CursoRepositorio {
+	
+    // //////////////////////////////////////
+    // Identification in the UI
+    // //////////////////////////////////////
+
+    public String getId() {
+        return "Curso";
+    }
+
+    public String iconName() {
+        return "SimpleObject";
+    }
 
 }
