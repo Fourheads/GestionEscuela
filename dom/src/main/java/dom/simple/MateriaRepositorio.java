@@ -31,11 +31,48 @@ import org.apache.isis.applib.annotation.MaxLength;
 import org.apache.isis.applib.annotation.MemberOrder;
 import org.apache.isis.applib.annotation.MultiLine;
 import org.apache.isis.applib.annotation.Named;
+import org.apache.isis.applib.annotation.ObjectType;
 import org.apache.isis.applib.annotation.RegEx;
 import org.apache.isis.applib.annotation.ActionSemantics.Of;
+import org.joda.time.LocalDate;
 
+@ObjectType("Materias")
 public class MateriaRepositorio {
 	
+	private Personal TraerPersonal(){
+		Personal pe=new Personal();
+		pe.setApellido("lasjdas");
+		pe.setNombre("Gogo");
+		pe.setDni(213213213);
+		pe.setNacionalidad(dom.simple.Persona.E_nacionalidad.ARGENTINA);
+		new LocalDate();
+		pe.setFechaNacimiento(LocalDate.now());
+		pe.setSexo(dom.simple.Persona.E_sexo.MASCULINO);
+		pe.setTelefono("123802183021");
+		Funcion Fu=new Funcion();
+		Fu.setNombre(dom.simple.Funcion.E_funciones.PRECEPTOR);
+		pe.addFuncion(Fu);
+		return pe;
+		}
+		/*
+		container.persistIfNotAlready(pe);
+		//******************************************************
+		pe.setApellido("jojolas");
+		pe.setNombre("MAgis");
+		pe.setDni(2013123);
+		pe.setSexo(dom.simple.Persona.E_sexo.FEMENINO);
+		pe.setTelefono("4895789345");
+		pe.addFuncion(Fu);
+		container.persistIfNotAlready(pe);
+		//******************************************************
+		pe.setApellido("plapla");
+		pe.setNombre("Dopolus");
+		pe.setDni(32874243);
+		pe.setSexo(dom.simple.Persona.E_sexo.MASCULINO);
+		pe.setTelefono("857968973");
+		pe.addFuncion(Fu);
+		container.persistIfNotAlready(pe);
+	}*/
     // //////////////////////////////////////
     // Identification in the UI
     // //////////////////////////////////////
@@ -55,7 +92,7 @@ public class MateriaRepositorio {
     @Bookmarkable
     @ActionSemantics(Of.SAFE)
     @MemberOrder(sequence = "1")
-    @Named ("Materia")
+    @Named ("Listar Materias")
     public List<Materia> listAll() {
         return container.allInstances(Materia.class);
     }
@@ -69,17 +106,15 @@ public class MateriaRepositorio {
         @MemberOrder(sequence = "2")
         @Named ("Crear Materia")
         public Materia create(
-                final @RegEx(validation = "[A-Za-Z]+") @Named("Nombre") String Nombre,
-                final @RegEx(validation = "[A-Za-Z]+") @MaxLength(2048)
-		    	@MultiLine @Named("Programa") String Programa,
-                final @RegEx(validation = "[A-Za-z]+") @Named("Prceptor") Personal preceptor) {
-            
+                final @RegEx(validation = "[A-Za-z]+") @Named("Nombre") String Nombre,
+                final @RegEx(validation = "[A-Za-z0-9]+") @MaxLength(2048)
+		    	@MultiLine @Named("Programa") String Programa)//,
+                //final @Named("Prceptor") Personal preceptor) {
+        {
         	final Materia obj = container.newTransientInstance(Materia.class);
-            final Personal pe=new Personal();
-            
             obj.setNombre(Nombre);
             obj.setPrograma(Programa);
-            obj.setProfesor(pe);
+            obj.setProfesor(TraerPersonal());
             
             //¿Como sigo???
         	
