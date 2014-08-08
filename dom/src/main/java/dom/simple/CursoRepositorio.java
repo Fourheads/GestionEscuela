@@ -23,6 +23,16 @@
 
 package dom.simple;
 
+import java.util.List;
+
+import org.apache.isis.applib.DomainObjectContainer;
+import org.apache.isis.applib.annotation.ActionSemantics;
+import org.apache.isis.applib.annotation.Bookmarkable;
+import org.apache.isis.applib.annotation.MemberOrder;
+import org.apache.isis.applib.annotation.Named;
+import org.apache.isis.applib.annotation.RegEx;
+import org.apache.isis.applib.annotation.ActionSemantics.Of;
+
 public class CursoRepositorio {
 	
     // //////////////////////////////////////
@@ -36,5 +46,52 @@ public class CursoRepositorio {
     public String iconName() {
         return "SimpleObject";
     }
+    
+ // //////////////////////////////////////
+    // List (action)
+    // //////////////////////////////////////
+    
+    @Bookmarkable
+    @ActionSemantics(Of.SAFE)
+    @MemberOrder(sequence = "1")
+    @Named ("Curso")
+    public List<Curso> listAll() {
+        return container.allInstances(Curso.class);
+    }
+
+
+    // //////////////////////////////////////
+    // Create (action)
+    // //////////////////////////////////////
+      
+    
+    @MemberOrder(sequence = "2")
+    @Named ("Crear curso")
+    public Curso create(
+            final @RegEx(validation = "[A-Ha-h]") @Named("Divicion") String divicion,
+            @Named("Turno") Turno turno,
+            final @RegEx(validation = "/d{1,1}") @Named("Año") int anio, 
+            final @RegEx(validation = "[A-Za-z]+") @Named("Prceptor") Personal preceptor) {
+        
+    	final Curso obj = container.newTransientInstance(Curso.class);
+        final Personal pe=new Personal();
+        
+        obj.setAño(anio);
+        obj.setDivision(divicion);
+        obj.setTurno(turno);
+        obj.setPreceptor(preceptor);
+        
+        //¿Como sigo???
+    	
+        container.persistIfNotAlready(obj);
+        return obj;
+    }
+    
+    // //////////////////////////////////////
+    // Injected services
+    // //////////////////////////////////////
+
+    @javax.inject.Inject 
+    DomainObjectContainer container;
 
 }
