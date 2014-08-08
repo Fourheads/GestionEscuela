@@ -24,6 +24,8 @@
 package dom.simple;
 
 import java.util.List;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 import javax.jdo.annotations.Column;
 import javax.jdo.annotations.Element;
@@ -83,9 +85,23 @@ public class Curso {
 	}
 	//}}	
 
-	// {{ Materias (property)
-	private List<Materia> materias;
+	//private List<Materia> materias;
 
+	// {{ Materias (Property)
+	@Join
+	@Element(dependent = "true")
+	private SortedSet<Materia> collectionName = new TreeSet<Materia>();
+
+	@MemberOrder(sequence = "1")
+	public SortedSet<Materia> getListaMateria() {
+		return collectionName;
+	}
+
+	public void setListaMateria(final SortedSet<Materia> collectionName) {
+		this.collectionName = collectionName;
+	}
+	// }}
+	/*
 	@Title
 	//@Element(column="Materia_ID")
 	@MemberOrder(sequence = "1.4")
@@ -99,7 +115,7 @@ public class Curso {
 	public void addMaterias(Materia NuevaMateria){
 		this.materias.add(NuevaMateria);
 	}
-	//}}
+	//}}*/
 	
 	// {{ Alumnos (property)
 	private List<Alumno> alumnos;
