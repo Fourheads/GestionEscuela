@@ -75,7 +75,7 @@ public class CursoRepositorio {
             final @RegEx(validation = "[A-Za-z]+") @Named("Prceptor") Personal preceptor) {
         
     	final Curso obj = container.newTransientInstance(Curso.class);
-        final Personal pe=new Personal();
+        //final Personal pe=new Personal();
         
         obj.setAño(anio);
         obj.setDivision(divicion);
