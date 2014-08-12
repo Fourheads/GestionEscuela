@@ -58,7 +58,7 @@ public class Materia {
 	
 	private Personal Profesor;
 	
-	@Column(allowsNull = "true")
+	@Column(allowsNull = "false")
 	@MemberOrder(sequence = "1.3")
 	public Personal getProfesor() {
 		return Profesor;
