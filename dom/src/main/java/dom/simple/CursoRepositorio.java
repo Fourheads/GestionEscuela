@@ -71,19 +71,14 @@ public class CursoRepositorio {
     public Curso create(
             final @RegEx(validation = "[A-Ha-h]") @Named("Divicion") String divicion,
             @Named("Turno") Turno turno,
-            final @RegEx(validation = "/d{1,1}") @Named("Año") int anio, 
-            final @RegEx(validation = "[A-Za-z]+") @Named("Prceptor") Personal preceptor) {
+            final @RegEx(validation = "/d{1,1}") @Named("Año") int anio){
         
     	final Curso obj = container.newTransientInstance(Curso.class);
-        final Personal pe=new Personal();
         
         obj.setAño(anio);
         obj.setDivision(divicion);
         obj.setTurno(turno);
-        obj.setPreceptor(preceptor);
-        
-        //¿Como sigo???
-    	
+     	
         container.persistIfNotAlready(obj);
         return obj;
     }
