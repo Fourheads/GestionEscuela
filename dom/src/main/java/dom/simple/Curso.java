@@ -35,7 +35,7 @@ import javax.jdo.annotations.Persistent;
 
 import org.apache.isis.applib.annotation.Hidden;
 import org.apache.isis.applib.annotation.MemberOrder;
-import org.apache.isis.applib.annotation.Title;
+//import org.apache.isis.applib.annotation.Title;
 
 
 @PersistenceCapable
@@ -45,7 +45,7 @@ public class Curso {
 	private String division;
 
 	@Persistent
-	@Title
+	//@Title
 	@Column(allowsNull = "true")
 	@MemberOrder(sequence = "1.1")
 	public String getDivision() {
@@ -55,12 +55,15 @@ public class Curso {
 		this.division = division;
 	}
 	//}}
-	
+	public String title(){
+		String titulo=String.valueOf(getAño())+"° "+getDivision()+" Turno:"+getTurno();
+		return titulo;
+	}
 	// {{ Turno (property)
 	private Turno turno;
 	
 	@Persistent
-	@Title
+	//@Title
 	@Column(allowsNull = "true")
 	@MemberOrder(sequence = "1.2")
 	public Turno getTurno() {
@@ -75,7 +78,7 @@ public class Curso {
 	private int anio;
 
 	@Persistent
-	@Title
+	//@Title
 	@Column(allowsNull = "true")
 	@MemberOrder(sequence = "1.3")
 	public int getAño() {
@@ -88,7 +91,7 @@ public class Curso {
 
 	// {{ Materias (Property)
 	@Join
-	@Element(dependent = "true")
+	@Element(dependent = "false")
 	private SortedSet<Materia> ListaMateria = new TreeSet<Materia>();
 
 	@MemberOrder(sequence = "1.4")
@@ -108,7 +111,7 @@ public class Curso {
 	
 	//private List<Materia> materias;
 	/*
-	@Title
+	//@Title
 	//@Element(column="Materia_ID")
 	@MemberOrder(sequence = "1.4")
 	public List<Materia> getMaterias() {
@@ -126,7 +129,7 @@ public class Curso {
 	
 	// {{ Alumnos (Property)
 	@Join
-	@Element(dependent = "true")
+	@Element(dependent = "false")
 	private SortedSet<Alumno> ListaAlumno = new TreeSet<Alumno>();
 
 	@MemberOrder(sequence = "1.5")
@@ -148,7 +151,7 @@ public class Curso {
 	/*
 	private List<Alumno> alumnos;
 	
-	@Title
+	//@Title
 	@Column(allowsNull = "true")
 	@Element(column="Alumno_id")
 	@MemberOrder(sequence = "1.5")
@@ -167,7 +170,7 @@ public class Curso {
 	private Personal preceptor;
 	
 	@Persistent
-	@Title
+	//@Title
 	@Column(allowsNull = "true")
 	@MemberOrder(sequence = "1.6")
 	public Personal getPreceptor() {
