@@ -24,46 +24,64 @@ package dom.simple;
 
 import javax.jdo.annotations.Column;
 import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
 
 import org.apache.isis.applib.annotation.MaxLength;
 import org.apache.isis.applib.annotation.MemberOrder;
 import org.apache.isis.applib.annotation.MultiLine;
 
+@javax.jdo.annotations.Queries( {
+    @javax.jdo.annotations.Query(
+            name = "DefautMateria", language = "JDOQL",
+            //value = "SELECT "
+            value="SELECT nombre, programa"
+                    + " FROM dom.simple.Materia")
+})
+
 @PersistenceCapable
 public class Materia {
 	
-	private String Nombre;	
+	private String nombre;	
 	
 	@Column(allowsNull = "true")
 	@MemberOrder(sequence = "1.1")
+	@Persistent
 	public String getNombre() {
-		return Nombre;
+		return nombre;
 	}
 	public void setNombre(String nombre) {
-		Nombre = nombre;
+		this.nombre = nombre;
 	}
 	
-	private String Programa;
+	private String programa;
 	
 	final @MaxLength(2048)
 	@MultiLine 
 	@Column(allowsNull = "true")
 	@MemberOrder(sequence = "1.2")
+	@Persistent
 	public String getPrograma() {
-		return Programa;
+		return programa;
 	}
 	public void setPrograma(String programa) {
-		Programa = programa;
+		this.programa = programa;
 	}
 	
 	private Personal Profesor;
 	
 	@Column(allowsNull = "false")
 	@MemberOrder(sequence = "1.3")
+	@Persistent
 	public Personal getProfesor() {
 		return Profesor;
 	}
 	public void setProfesor(Personal profesor) {
 		Profesor = profesor;
 	}
+
+	public String title(){
+		String titulo=String.valueOf("Materia: "+getNombre());
+		return titulo;
+	}
+	
 }
