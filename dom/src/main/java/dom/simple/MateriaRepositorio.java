@@ -22,6 +22,7 @@
 
 package dom.simple;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.isis.applib.DomainObjectContainer;
@@ -31,49 +32,18 @@ import org.apache.isis.applib.annotation.MaxLength;
 import org.apache.isis.applib.annotation.MemberOrder;
 import org.apache.isis.applib.annotation.MultiLine;
 import org.apache.isis.applib.annotation.Named;
+import org.apache.isis.applib.annotation.Programmatic;
 import org.apache.isis.applib.annotation.RegEx;
 import org.apache.isis.applib.annotation.ActionSemantics.Of;
+import org.apache.isis.applib.query.QueryDefault;
 import org.joda.time.LocalDate;
+
+import com.google.common.base.Predicate;
 
 @Named("Materias")
 public class MateriaRepositorio {
 	
-	private Personal TraerPersonal(){
-		Personal pe=container.newTransientInstance(Personal.class);
-		pe.setApellido("lasjdas");
-		pe.setNombre("Gogo");
-		pe.setDni(213213213);
-		pe.setNacionalidad(dom.simple.Persona.E_nacionalidad.ARGENTINA);
-		new LocalDate();
-		pe.setFechaNacimiento(LocalDate.now());
-		pe.setSexo(dom.simple.Persona.E_sexo.MASCULINO);
-		pe.setTelefono("123802183021");
-		Funcion Fu=new Funcion();
-		Fu.setNombre(dom.simple.Funcion.E_funciones.PRECEPTOR);
-		pe.addFuncion(Fu);
-		container.persistIfNotAlready(pe);
-		container.flush();
-		return pe;
-		}
-		/*
-		container.persistIfNotAlready(pe);
-		//******************************************************
-		pe.setApellido("jojolas");
-		pe.setNombre("MAgis");
-		pe.setDni(2013123);
-		pe.setSexo(dom.simple.Persona.E_sexo.FEMENINO);
-		pe.setTelefono("4895789345");
-		pe.addFuncion(Fu);
-		container.persistIfNotAlready(pe);
-		//******************************************************
-		pe.setApellido("plapla");
-		pe.setNombre("Dopolus");
-		pe.setDni(32874243);
-		pe.setSexo(dom.simple.Persona.E_sexo.MASCULINO);
-		pe.setTelefono("857968973");
-		pe.addFuncion(Fu);
-		container.persistIfNotAlready(pe);
-	}*/
+	
     // //////////////////////////////////////
     // Identification in the UI
     // //////////////////////////////////////
@@ -94,8 +64,51 @@ public class MateriaRepositorio {
     @ActionSemantics(Of.SAFE)
     @MemberOrder(sequence = "1")
     @Named ("Listar Materias")
+    public List<Materia> complete() {
+        final List<Materia> items = listAll();
+       //for (int i = 0; i < items.size(); i++) {
+    	 //  items.get(i).setProfesor(DefautPersonal());		
+	//}
+        
+        // List<String> LSMate=new ArrayList<String>();
+       /*
+        for (Materia materia : items) {
+        	materia.setProfesor(DefautPersonal());
+        	//LSMate.add(materia.getNombre()+" "+materia.getPrograma());
+		}*/
+        //return LSMate;
+        return items;
+    }
+/*    
+private Personal DefautPersonal(){
+    	Personal pe=new Personal();
+    			pe.setApellido(" ");
+    			pe.setNombre(" ");
+    			pe.setDni(0);
+    			pe.setNacionalidad(dom.simple.Persona.E_nacionalidad.OTRO);
+    			new LocalDate();
+    			pe.setFechaNacimiento(LocalDate.now());
+    			pe.setSexo(dom.simple.Persona.E_sexo.MASCULINO);
+    			pe.setTelefono(" ");
+    			Funcion Fu=new Funcion();
+    			Fu.setNombre(dom.simple.Funcion.E_funciones.PRECEPTOR);
+    			pe.addFuncion(Fu);
+    		return pe;
+    }    
+    */
+    
+    
+    @Programmatic
     public List<Materia> listAll() {
-        return container.allInstances(Materia.class);
+        //long range=2;
+    	return container.allMatches(
+                new QueryDefault<Materia>(Materia.class, 
+                        "DefautMateria"));
+		//return container.allInstances(Materia.class,range);
+    	 //return container.allMatches(
+           //      new QueryDefault<Materia>(Materia.class, 
+             //            "blabla 1", 
+               //          "blabla 2", "blabla 3"));
     }
         
 
@@ -109,15 +122,11 @@ public class MateriaRepositorio {
         public Materia create(
                 final @RegEx(validation = "[A-Za-z]+") @Named("Nombre") String Nombre,
                 final @RegEx(validation = ".+") @MaxLength(2048)
-		    	@MultiLine @Named("Programa") String Programa)//,
-                //final @Named("Prceptor") Personal preceptor) {
+		    	@MultiLine @Named("Programa") String Programa)
         {
         	final Materia obj = container.newTransientInstance(Materia.class);
             obj.setNombre(Nombre);
             obj.setPrograma(Programa);
-            obj.setProfesor(TraerPersonal());
-            
-            //¿Como sigo???
         	
             container.persistIfNotAlready(obj);
             return obj;
