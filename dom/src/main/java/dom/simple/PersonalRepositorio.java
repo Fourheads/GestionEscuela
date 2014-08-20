@@ -31,7 +31,7 @@ public class PersonalRepositorio {
         return "SimpleObject";
     }
     
-  //Listar personal
+    //Listar personal
     @Bookmarkable
     @ActionSemantics(Of.SAFE)
     @MemberOrder(sequence = "1")
@@ -40,7 +40,28 @@ public class PersonalRepositorio {
     	return container.allInstances(Personal.class);
     }
     
-//Crear personal
+    //Listar Preceptores
+    @Bookmarkable
+    @ActionSemantics(Of.SAFE)
+    @MemberOrder(sequence = "3")
+    @Named ("Listar Preceptores")
+    public List<Personal> listPreceptor(){
+    	List<Personal> listPreceptor = new ArrayList<Personal>();
+    	
+    	for(Personal p: listAll()){    		
+    		for(Funcion f: p.getFunciones()){
+    			if (f.getNombre() == E_funciones.PRECEPTOR){
+    				listPreceptor.add(p);
+    			}  			
+    			 
+    		}
+    	}
+    	
+    	return listPreceptor;
+    	
+    }    
+    
+    //Crear personal
     
     @MemberOrder(sequence = "2")
     @Named ("Crear Personal")
@@ -82,29 +103,7 @@ public class PersonalRepositorio {
     	return newPersonal;
     }
     
-    /*
-    //Listar Preceptores {{
     
-    @MemberOrder(sequence = "2")
-    @Named ("Listar por Funcion")
-    public List<Personal> ListByDni(
-            final @Named("Funcion") E_funciones funcion){
-		
-		return listByFuncion(funcion);
-		
-	}
-    
-    @Programmatic
-    public List<Personal> listByFuncion(E_funciones preceptor) {
-        return container.allMatches(
-            new QueryDefault<Personal>(Personal.class, 
-                    "findByFuncion", 
-                    "funcion", preceptor));
-    }
-    
-    // }}
-     
-     */
     private LocalDate choices0FechaNacimiento()//VALIDAR FECHA!!!
 	{
 		LocalDate dt=new LocalDate();

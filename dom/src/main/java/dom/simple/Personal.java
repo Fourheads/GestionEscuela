@@ -26,6 +26,13 @@ import dom.simple.Funcion.E_funciones;
 @javax.jdo.annotations.DatastoreIdentity(
         strategy=javax.jdo.annotations.IdGeneratorStrategy.IDENTITY,
          column="id")
+@javax.jdo.annotations.Queries( {
+    @javax.jdo.annotations.Query(
+            name = "findPersonal", language = "JDOQL",
+            value = "SELECT "
+                    + "FROM dom.simple.Personal ")
+	} )
+
 @ObjectType("PERSONAL")
 @Bookmarkable
 
@@ -49,11 +56,10 @@ public class Personal extends Persona implements Comparable<Personal>{
 		return this;
 			
 	}
-	
-	
+		
 	
 	// {{ Funciones (property)
-	@Join
+	
 	@Element(column = "FUNCION", dependent = "true")
 	private SortedSet<Funcion> funciones = new TreeSet<Funcion>();
 	

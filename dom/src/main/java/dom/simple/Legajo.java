@@ -72,7 +72,7 @@ public class Legajo {
 	}
 	
 	// {{ Tarjetas (property)
-	@Element(column = "TARJETA", dependent = "false") //EN dependent DEBERÍA IR true, ¿verdad?.
+	@Element(column = "id_legajo", dependent = "false") 
 	private SortedSet<Tarjeta> tarjetas = new TreeSet<Tarjeta>();
 	
 	//@Persistent no se usa cuando se usa @Element
