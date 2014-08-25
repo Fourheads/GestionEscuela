@@ -67,16 +67,17 @@ public class Materia {
 		this.programa = programa;
 	}
 	
-	private Personal Profesor;
+	private Personal profesor;
 	
-	@Column(allowsNull = "false")
-	@MemberOrder(sequence = "1.3")
 	@Persistent
+	//@Title
+	@Column(allowsNull = "true")
+	@MemberOrder(sequence = "1.3")
 	public Personal getProfesor() {
-		return Profesor;
+		return profesor;
 	}
 	public void setProfesor(Personal profesor) {
-		Profesor = profesor;
+		this.profesor = profesor;
 	}
 
 	public String title(){
