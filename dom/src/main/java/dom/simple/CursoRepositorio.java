@@ -60,7 +60,11 @@ public class CursoRepositorio {
         return container.allInstances(Curso.class);
     }
 
-
+    public List<Personal> listPreceptor()
+    {
+    	PersonalRepositorio re=new PersonalRepositorio();
+    	return re.listPreceptor();
+    }
     // //////////////////////////////////////
     // Create (action)
     // //////////////////////////////////////
