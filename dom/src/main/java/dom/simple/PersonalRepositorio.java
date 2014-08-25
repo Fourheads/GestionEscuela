@@ -40,6 +40,27 @@ public class PersonalRepositorio {
     	return container.allInstances(Personal.class);
     }
     
+    //Listar Profesores
+    @Bookmarkable
+    @ActionSemantics(Of.SAFE)
+    @MemberOrder(sequence = "3")
+    @Named ("Listar Profesores")
+    public List<Personal> listProfesor(){
+    	List<Personal> listPreceptor = new ArrayList<Personal>();
+    	
+    	for(Personal p: listAll()){    		
+    		for(Funcion f: p.getFunciones()){
+    			if (f.getNombre() == E_funciones.PROFESOR){
+    				listPreceptor.add(p);
+    			}  			
+    			 
+    		}
+    	}
+    	
+    	return listPreceptor;
+    	
+    }
+    
     //Listar Preceptores
     @Bookmarkable
     @ActionSemantics(Of.SAFE)
