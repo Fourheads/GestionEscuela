@@ -31,57 +31,7 @@ public class PersonalRepositorio {
         return "SimpleObject";
     }
     
-    //Listar personal
-    @Bookmarkable
-    @ActionSemantics(Of.SAFE)
-    @MemberOrder(sequence = "1")
-    @Named ("Listar Personal")
-    public List<Personal> listAll(){    	
-    	return container.allInstances(Personal.class);
-    }
-    
-    //Listar Profesores
-    @Bookmarkable
-    @ActionSemantics(Of.SAFE)
-    @MemberOrder(sequence = "3")
-    @Named ("Listar Profesores")
-    public List<Personal> listProfesor(){
-    	List<Personal> listPreceptor = new ArrayList<Personal>();
-    	
-    	for(Personal p: listAll()){    		
-    		for(Funcion f: p.getFunciones()){
-    			if (f.getNombre() == E_funciones.PROFESOR){
-    				listPreceptor.add(p);
-    			}  			
-    			 
-    		}
-    	}
-    	
-    	return listPreceptor;
-    	
-    }
-    
-    //Listar Preceptores
-    @Bookmarkable
-    @ActionSemantics(Of.SAFE)
-    @MemberOrder(sequence = "3")
-    @Named ("Listar Preceptores")
-    public List<Personal> listPreceptor(){
-    	List<Personal> listPreceptor = new ArrayList<Personal>();
-    	
-    	for(Personal p: listAll()){    		
-    		for(Funcion f: p.getFunciones()){
-    			if (f.getNombre() == E_funciones.PRECEPTOR){
-    				listPreceptor.add(p);
-    			}  			
-    			 
-    		}
-    	}
-    	
-    	return listPreceptor;
-    	
-    }    
-    
+        
     //Crear personal
     
     @MemberOrder(sequence = "2")
@@ -124,6 +74,57 @@ public class PersonalRepositorio {
     	return newPersonal;
     }
     
+    
+    // LISTADOS//
+        
+    //Listar personal
+    @Bookmarkable
+    @ActionSemantics(Of.SAFE)
+    @MemberOrder(sequence = "1")
+    @Named ("Listar Personal")
+    public List<Personal> listAll(){    	
+    	return container.allInstances(Personal.class);
+    }
+    
+    
+    //Listar Preceptores
+    
+    @MemberOrder(sequence = "1.1")
+    @Named ("Preceptores")
+    public List<Personal> listPreceptor(){
+    	return container.allMatches(
+    			new QueryDefault<Personal>(Personal.class, "findPreceptores"));
+    }
+    
+    //Listar Profesores
+    
+    @MemberOrder(sequence = "1.2")
+    @Named ("Profesores")
+    public List<Personal> listProfesor(){
+    	return container.allMatches(
+    			new QueryDefault<Personal>(Personal.class, "findProfesores"));
+    }
+    
+    //Listar Directores
+    
+    @MemberOrder(sequence = "1.3")
+    @Named ("Directores")
+    public List<Personal> listDirector(){
+    	return container.allMatches(
+    			new QueryDefault<Personal>(Personal.class, "findDirectores"));
+    }
+    
+    //Listar Secretarios
+    
+    @MemberOrder(sequence = "1.4")
+    @Named ("Secretarios")
+    public List<Personal> listSecretario(){
+    	return container.allMatches(
+    			new QueryDefault<Personal>(Personal.class, "findSecretarios"));
+    }
+    
+    
+    // FIN LISTADOS //
     
     private LocalDate choices0FechaNacimiento()//VALIDAR FECHA!!!
 	{

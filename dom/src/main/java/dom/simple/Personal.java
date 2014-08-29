@@ -27,11 +27,19 @@ import dom.simple.Funcion.E_funciones;
         strategy=javax.jdo.annotations.IdGeneratorStrategy.IDENTITY,
          column="id")
 @javax.jdo.annotations.Queries( {
-    @javax.jdo.annotations.Query(
-            name = "findPersonal", language = "JDOQL",
-            value = "SELECT "
-                    + "FROM dom.simple.Personal ")
-	} )
+	@javax.jdo.annotations.Query(name = "findPreceptores", language = "JDOQL",
+		value ="SELECT FROM dom.simple.Personal, " +
+				" WHERE funciones.contains(funcion) && funcion.nombre == 'PRECEPTOR'"),
+	@javax.jdo.annotations.Query(name = "findProfesores", language = "JDOQL",
+		value ="SELECT FROM dom.simple.Personal, " +
+				" WHERE funciones.contains(funcion) && funcion.nombre == 'PROFESOR'"),
+	@javax.jdo.annotations.Query(name = "findDirectores", language = "JDOQL",
+		value ="SELECT FROM dom.simple.Personal, " +
+				" WHERE funciones.contains(funcion) && funcion.nombre == 'DIRECTOR'"),
+	@javax.jdo.annotations.Query(name = "findSecretarios", language = "JDOQL",
+		value ="SELECT FROM dom.simple.Personal, " +
+				" WHERE funciones.contains(funcion) && funcion.nombre == 'SECRETARIO'"),
+} )
 
 @ObjectType("PERSONAL")
 @Bookmarkable
