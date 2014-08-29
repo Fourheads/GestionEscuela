@@ -15,7 +15,6 @@ public class Funcion implements Comparable<Funcion>{
 	// {{ Nombre (property)
 	private E_funciones nombre;
 
-
 	@Column(allowsNull = "false")
 	@MemberOrder(sequence = "1")
 	@Persistent

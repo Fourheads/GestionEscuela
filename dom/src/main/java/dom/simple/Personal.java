@@ -57,7 +57,7 @@ public class Personal extends Persona implements Comparable<Personal>{
 			
 		final Funcion newFuncion = new Funcion();
 			
-		newFuncion.setObservaciones(observaciones);
+		newFuncion.setObservaciones(observaciones.toUpperCase());
 		newFuncion.setNombre(funcion);
 			
 		addFuncion(newFuncion);

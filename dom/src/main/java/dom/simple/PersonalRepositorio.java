@@ -55,18 +55,18 @@ public class PersonalRepositorio {
     	
         newLocalidad.setNombre(localidad);
         
-        newDireccion.setCalle(calle);
+        newDireccion.setCalle(calle.toUpperCase());
         newDireccion.setDepartamento(departamento);
         newDireccion.setLocalidad(newLocalidad);
         newDireccion.setNumero(numero);
         newDireccion.setPiso(piso);
         
-        newPersonal.setApellido(apellido);
+        newPersonal.setApellido(apellido.toLowerCase());
         newPersonal.setDireccion(newDireccion);
         newPersonal.setDni(dni);
         newPersonal.setFechaNacimiento(nacimiento);
         newPersonal.setNacionalidad(nacionalidad);
-        newPersonal.setNombre(nombre);
+        newPersonal.setNombre(nombre.toUpperCase());
         newPersonal.setSexo(sexo);
         newPersonal.setTelefono(telefono);
         
@@ -90,11 +90,26 @@ public class PersonalRepositorio {
     //Listar Preceptores
     
     @MemberOrder(sequence = "1.1")
+    @ActionSemantics(Of.SAFE)
     @Named ("Preceptores")
     public List<Personal> listPreceptor(){
     	return container.allMatches(
     			new QueryDefault<Personal>(Personal.class, "findPreceptores"));
     }
+    
+    /* @Bookmarkable
+    @ActionSemantics(Of.SAFE)
+    @MemberOrder(sequence = "5")
+    @Named ("Preceptores")    
+    public List<Personal> listByPreceptor(){   	  	
+    	
+    	return container.allMatches(
+    			new QueryDefault<Personal>(Personal.class,
+    					"findPreceptores"));
+    	
+    	
+    }*/
+    
     
     //Listar Profesores
     
