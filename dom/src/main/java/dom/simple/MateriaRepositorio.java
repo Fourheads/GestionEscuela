@@ -66,36 +66,8 @@ public class MateriaRepositorio {
     @Named ("Listar Materias")
     public List<Materia> complete() {
         final List<Materia> items = listAll();
-       //for (int i = 0; i < items.size(); i++) {
-    	 //  items.get(i).setProfesor(DefautPersonal());		
-	//}
-        
-        // List<String> LSMate=new ArrayList<String>();
-       /*
-        for (Materia materia : items) {
-        	materia.setProfesor(DefautPersonal());
-        	//LSMate.add(materia.getNombre()+" "+materia.getPrograma());
-		}*/
-        //return LSMate;
         return items;
     }
-/*    
-private Personal DefautPersonal(){
-    	Personal pe=new Personal();
-    			pe.setApellido(" ");
-    			pe.setNombre(" ");
-    			pe.setDni(0);
-    			pe.setNacionalidad(dom.simple.Persona.E_nacionalidad.OTRO);
-    			new LocalDate();
-    			pe.setFechaNacimiento(LocalDate.now());
-    			pe.setSexo(dom.simple.Persona.E_sexo.MASCULINO);
-    			pe.setTelefono(" ");
-    			Funcion Fu=new Funcion();
-    			Fu.setNombre(dom.simple.Funcion.E_funciones.PRECEPTOR);
-    			pe.addFuncion(Fu);
-    		return pe;
-    }    
-    */
     
     
     @Programmatic
@@ -104,11 +76,6 @@ private Personal DefautPersonal(){
     	return container.allMatches(
                 new QueryDefault<Materia>(Materia.class, 
                         "DefautMateria"));
-		//return container.allInstances(Materia.class,range);
-    	 //return container.allMatches(
-           //      new QueryDefault<Materia>(Materia.class, 
-             //            "blabla 1", 
-               //          "blabla 2", "blabla 3"));
     }
         
 
@@ -121,8 +88,7 @@ private Personal DefautPersonal(){
         @Named ("Crear Materia")
         public Materia create(
                 final @RegEx(validation = "[A-Za-z]+") @Named("Nombre") String Nombre,
-                final @RegEx(validation = ".+") @MaxLength(2048)
-		    	@MultiLine @Named("Programa") String Programa)
+                final @MaxLength(2048) @MultiLine @Named("Programa") String Programa)
         {
         	final Materia obj = container.newTransientInstance(Materia.class);
             obj.setNombre(Nombre);
