@@ -10,6 +10,7 @@ import javax.jdo.annotations.Join;
 import javax.jdo.annotations.VersionStrategy;
 
 import org.apache.isis.applib.annotation.Bookmarkable;
+import org.apache.isis.applib.annotation.Bounded;
 import org.apache.isis.applib.annotation.Hidden;
 import org.apache.isis.applib.annotation.MaxLength;
 import org.apache.isis.applib.annotation.MemberOrder;
@@ -43,7 +44,7 @@ import dom.simple.Funcion.E_funciones;
 
 @ObjectType("PERSONAL")
 @Bookmarkable
-
+@Bounded
 public class Personal extends Persona implements Comparable<Personal>{
 	
 	//@Column(allowsNull = "true", name = "FUNCIONES_ID")
