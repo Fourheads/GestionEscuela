@@ -23,7 +23,8 @@
 
 package dom.simple;
 
-//import java.util.List;
+import java.util.Arrays;
+import java.util.List;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
@@ -33,11 +34,15 @@ import javax.jdo.annotations.Join;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 
+import org.apache.isis.applib.DomainObjectContainer;
+import org.apache.isis.applib.annotation.Bounded;
 import org.apache.isis.applib.annotation.Hidden;
 import org.apache.isis.applib.annotation.MemberOrder;
+import org.apache.isis.applib.annotation.Named;
+
 //import org.apache.isis.applib.annotation.Title;
 
-
+@Bounded
 @PersistenceCapable
 public class Curso {
 	
@@ -179,5 +184,13 @@ public class Curso {
 	public void setPreceptor(Personal Preceptor) {
 		this.preceptor = Preceptor;
 	}
-	//}}
+	
+	/*
+	public List<Personal> choices0Listarpersonal(){
+		return preceptor.Listarpersonal(container);
+	}
+	
+    @javax.inject.Inject 
+    DomainObjectContainer container;
+	//}}*/
 }
