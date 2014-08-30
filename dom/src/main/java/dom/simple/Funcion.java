@@ -40,7 +40,7 @@ public class Funcion implements Comparable<Funcion>{
 	}
 
 	public void setObservaciones(final String observacion) {
-		this.observaciones = observaciones;
+		this.observaciones = observacion;
 	}
 	// }}
 
