@@ -22,7 +22,6 @@
 
 package dom.simple;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.isis.applib.DomainObjectContainer;
@@ -32,13 +31,8 @@ import org.apache.isis.applib.annotation.MaxLength;
 import org.apache.isis.applib.annotation.MemberOrder;
 import org.apache.isis.applib.annotation.MultiLine;
 import org.apache.isis.applib.annotation.Named;
-import org.apache.isis.applib.annotation.Programmatic;
-import org.apache.isis.applib.annotation.RegEx;
 import org.apache.isis.applib.annotation.ActionSemantics.Of;
-import org.apache.isis.applib.query.QueryDefault;
-import org.joda.time.LocalDate;
 
-import com.google.common.base.Predicate;
 
 @Named("Materias")
 public class MateriaRepositorio {
@@ -67,8 +61,6 @@ public class MateriaRepositorio {
     public List<Materia> complete() {
         return container.allInstances(Materia.class);
     }
-    
-        
 
         // //////////////////////////////////////
         // Create (action)
@@ -89,6 +81,15 @@ public class MateriaRepositorio {
             return obj;
         }
         
+        
+        @ActionSemantics(Of.NON_IDEMPOTENT)
+        @MemberOrder(sequence = "3")
+        @Named("Borrar Materia")
+        public String removePermission(@Named("Materia") Materia mate) {
+        		String Smateria = mate.getNombre();
+    			container.remove(mate);
+    			return "La materia " + Smateria + " fue borrada con exito";
+    	}
         // //////////////////////////////////////
         // Injected services
         // //////////////////////////////////////
