@@ -54,7 +54,7 @@ public class CursoRepositorio {
     
     @Bookmarkable
     @ActionSemantics(Of.SAFE)
-    @MemberOrder(sequence = "1")
+    @MemberOrder(sequence = "1.2")
     @Named ("Listar Cursos")
     public List<Curso> listAll() {
         return container.allInstances(Curso.class);
@@ -70,7 +70,7 @@ public class CursoRepositorio {
     // //////////////////////////////////////
       
     
-    @MemberOrder(sequence = "2")
+    @MemberOrder(sequence = "1.1")
     @Named ("Crear curso")
     public Curso create(
             final @RegEx(validation = "[A-Ha-h]") @Named("Divicion") String divicion,
