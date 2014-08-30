@@ -22,14 +22,20 @@
 
 package dom.simple;
 
+import java.util.List;
+
 import javax.jdo.annotations.Column;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 
+import org.apache.isis.applib.DomainObjectContainer;
 import org.apache.isis.applib.annotation.Bounded;
 import org.apache.isis.applib.annotation.MaxLength;
 import org.apache.isis.applib.annotation.MemberOrder;
 import org.apache.isis.applib.annotation.MultiLine;
+import org.apache.isis.applib.annotation.Named;
+import org.apache.isis.applib.query.QueryDefault;
+
 
 
 @Bounded
@@ -71,14 +77,31 @@ public class Materia {
 	public Personal getProfesor() {
 		return profesor;
 	}
+	
+
 	public void setProfesor(Personal profesor) {
 		this.profesor = profesor;
 	}
 
+    @MemberOrder(sequence = "1.4")
+    @Named("Asinganar profesor")
+    public void asignarProfesor(final @Named("Profesor") Personal profesor){
+    	this.profesor=profesor;
+    }
+    
+    public List<Personal> choices0AsignarProfesor(){
+    	return container.allMatches(
+    			new QueryDefault<Personal>(Personal.class, "findProfesores"));
+    }
 	
 	public String title(){
 		String titulo=String.valueOf("Materia: "+getNombre());
 		return titulo;
 	}
 	
+    //region > injected services
+    // //////////////////////////////////////
+
+    @javax.inject.Inject 
+    DomainObjectContainer container;
 }
