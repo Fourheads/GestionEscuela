@@ -65,18 +65,9 @@ public class MateriaRepositorio {
     @MemberOrder(sequence = "1")
     @Named ("Listar Materias")
     public List<Materia> complete() {
-        final List<Materia> items = listAll();
-        return items;
+        return container.allInstances(Materia.class);
     }
     
-    
-    @Programmatic
-    public List<Materia> listAll() {
-        //long range=2;
-    	return container.allMatches(
-                new QueryDefault<Materia>(Materia.class, 
-                        "DefautMateria"));
-    }
         
 
         // //////////////////////////////////////
@@ -87,7 +78,7 @@ public class MateriaRepositorio {
         @MemberOrder(sequence = "2")
         @Named ("Crear Materia")
         public Materia create(
-                final @RegEx(validation = "[A-Za-z]+") @Named("Nombre") String Nombre,
+                final @Named("Nombre") String Nombre,
                 final @MaxLength(2048) @MultiLine @Named("Programa") String Programa)
         {
         	final Materia obj = container.newTransientInstance(Materia.class);
