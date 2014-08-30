@@ -23,7 +23,6 @@
 
 package dom.simple;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.SortedSet;
 import java.util.TreeSet;
@@ -39,6 +38,7 @@ import org.apache.isis.applib.annotation.Bounded;
 import org.apache.isis.applib.annotation.Hidden;
 import org.apache.isis.applib.annotation.MemberOrder;
 import org.apache.isis.applib.annotation.Named;
+import org.apache.isis.applib.query.QueryDefault;
 
 //import org.apache.isis.applib.annotation.Title;
 
@@ -52,7 +52,7 @@ public class Curso {
 	@Persistent
 	//@Title
 	@Column(allowsNull = "true")
-	@MemberOrder(sequence = "1.1")
+	@MemberOrder(sequence = "1.2")
 	public String getDivision() {
 		return division;
 	}
@@ -70,7 +70,7 @@ public class Curso {
 	@Persistent
 	//@Title
 	@Column(allowsNull = "true")
-	@MemberOrder(sequence = "1.2")
+	@MemberOrder(sequence = "1.3")
 	public Turno getTurno() {
 		return turno;
 	}
@@ -85,7 +85,7 @@ public class Curso {
 	@Persistent
 	//@Title
 	@Column(allowsNull = "true")
-	@MemberOrder(sequence = "1.3")
+	@MemberOrder(sequence = "1.1")
 	public int getAño() {
 		return anio;
 	}
@@ -185,12 +185,19 @@ public class Curso {
 		this.preceptor = Preceptor;
 	}
 	
-	/*
-	public List<Personal> choices0Listarpersonal(){
-		return preceptor.Listarpersonal(container);
-	}
+    @MemberOrder(sequence = "1.7")
+    @Named("Asinganar preceptor")
+    public void asignarPreceptor(final @Named("Preceptor") Personal prece){
+    	this.preceptor=prece;
+    }
+    
+    public List<Personal> choices0AsignarPreceptor(){
+    	return container.allMatches(
+    			new QueryDefault<Personal>(Personal.class, "findPreceptores"));
+    }
+	
 	
     @javax.inject.Inject 
     DomainObjectContainer container;
-	//}}*/
+
 }
