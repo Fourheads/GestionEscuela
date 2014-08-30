@@ -26,18 +26,13 @@ import javax.jdo.annotations.Column;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 
+import org.apache.isis.applib.annotation.Bounded;
 import org.apache.isis.applib.annotation.MaxLength;
 import org.apache.isis.applib.annotation.MemberOrder;
 import org.apache.isis.applib.annotation.MultiLine;
 
-@javax.jdo.annotations.Queries( {
-    @javax.jdo.annotations.Query(
-            name = "DefautMateria", language = "JDOQL",
-            //value = "SELECT "
-            value="SELECT nombre, programa"
-                    + " FROM dom.simple.Materia")
-})
 
+@Bounded
 @PersistenceCapable
 public class Materia {
 	
@@ -80,6 +75,7 @@ public class Materia {
 		this.profesor = profesor;
 	}
 
+	
 	public String title(){
 		String titulo=String.valueOf("Materia: "+getNombre());
 		return titulo;
