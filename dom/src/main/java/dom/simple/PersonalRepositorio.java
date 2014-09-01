@@ -61,7 +61,7 @@ public class PersonalRepositorio {
         newDireccion.setNumero(numero);
         newDireccion.setPiso(piso);
         
-        newPersonal.setApellido(apellido.toLowerCase());
+        newPersonal.setApellido(apellido.toUpperCase());
         newPersonal.setDireccion(newDireccion);
         newPersonal.setDni(dni);
         newPersonal.setFechaNacimiento(nacimiento);
@@ -94,22 +94,8 @@ public class PersonalRepositorio {
     @Named ("Preceptores")
     public List<Personal> listPreceptor(){
     	return container.allMatches(
-    			new QueryDefault<Personal>(Personal.class, "findPreceptores"));
+    			new QueryDefault<Personal>(Personal.class, "findByFuncion", "nombre", E_funciones.PRECEPTOR.toString()));
     }
-    
-    /* @Bookmarkable
-    @ActionSemantics(Of.SAFE)
-    @MemberOrder(sequence = "5")
-    @Named ("Preceptores")    
-    public List<Personal> listByPreceptor(){   	  	
-    	
-    	return container.allMatches(
-    			new QueryDefault<Personal>(Personal.class,
-    					"findPreceptores"));
-    	
-    	
-    }*/
-    
     
     //Listar Profesores
     
@@ -117,7 +103,7 @@ public class PersonalRepositorio {
     @Named ("Profesores")
     public List<Personal> listProfesor(){
     	return container.allMatches(
-    			new QueryDefault<Personal>(Personal.class, "findProfesores"));
+    			new QueryDefault<Personal>(Personal.class, "findByFuncion", "nombre", E_funciones.PROFESOR.toString()));
     }
     
     //Listar Directores
@@ -126,7 +112,7 @@ public class PersonalRepositorio {
     @Named ("Directores")
     public List<Personal> listDirector(){
     	return container.allMatches(
-    			new QueryDefault<Personal>(Personal.class, "findDirectores"));
+    			new QueryDefault<Personal>(Personal.class, "findByFuncion", "nombre", E_funciones.DIRECTOR.toString()));
     }
     
     //Listar Secretarios
@@ -135,7 +121,7 @@ public class PersonalRepositorio {
     @Named ("Secretarios")
     public List<Personal> listSecretario(){
     	return container.allMatches(
-    			new QueryDefault<Personal>(Personal.class, "findSecretarios"));
+    			new QueryDefault<Personal>(Personal.class, "findByFuncion", "nombre", E_funciones.SECRETARIO.toString()));
     }
     
     
